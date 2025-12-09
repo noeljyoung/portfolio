@@ -84,7 +84,7 @@
         
         .gradient-text {
             /* background: linear-gradient(135deg, #ff6b35 0%, #10b981 100%); */
-            background: linear-gradient(135deg, #ffa535 0%, #0b8336 100%);
+            background: linear-gradient(135deg, #ffa535 0%, #c301c6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -102,7 +102,7 @@
             inset: 0;
             border-radius: 0.5rem;
             padding: 2px;
-            background: linear-gradient(135deg, #ff6b35, #10b981);
+            background: linear-gradient(135deg, #ff6b35, #c301c6);
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
             mask-composite: exclude;
@@ -141,7 +141,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #ff6b35, #10b981);
+            background: linear-gradient(90deg, #ff6b35, #c301c6);
             transition: width 0.3s ease;
         }
         
@@ -154,6 +154,112 @@
             border-right: 2px solid #ff6b35;
             white-space: nowrap;
             animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+        }
+
+        .stack-3d {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+            perspective: 1000px;
+        }
+
+        .stack-layer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1.5rem 2rem;
+            background: linear-gradient(145deg, #1f1f1f 0%, #151515 100%);
+            border: 2px solid #2a2a2a;
+            border-radius: 1rem;
+            width: 100%;
+            max-width: 220px;
+            position: relative;
+            margin-top: -8px;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition-delay: var(--delay);
+            opacity: 0;
+            transform: translateY(-30px) scale(0.95);
+            box-shadow:
+                    0 10px 20px rgba(0, 0, 0, 0.3),
+                    0 6px 6px rgba(0, 0, 0, 0.2),
+                    inset 0 -2px 4px rgba(0, 0, 0, 0.3),
+                    inset 0 2px 4px rgba(255, 255, 255, 0.05);
+        }
+
+        .stack-layer.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .stack-layer:first-child {
+            margin-top: 0;
+            z-index: 6;
+        }
+
+        .stack-layer:nth-child(2) { z-index: 5; }
+        .stack-layer:nth-child(3) { z-index: 4; }
+        .stack-layer:nth-child(4) { z-index: 3; }
+        .stack-layer:nth-child(5) { z-index: 2; }
+        .stack-layer:nth-child(6) { z-index: 1; }
+
+        .stack-layer::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(135deg, #ff6b35, #10b981);
+            border-radius: 1rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .stack-layer:hover {
+            transform: translateY(-15px) scale(1.05) rotateX(5deg);
+            border-color: transparent;
+            box-shadow:
+                    0 20px 40px rgba(255, 107, 53, 0.4),
+                    0 10px 20px rgba(16, 185, 129, 0.2),
+                    inset 0 -2px 8px rgba(0, 0, 0, 0.4),
+                    inset 0 2px 8px rgba(255, 255, 255, 0.1);
+            z-index: 10 !important;
+        }
+
+        .stack-layer:hover::before {
+            opacity: 1;
+        }
+
+        .stack-layer img,
+        .stack-layer svg {
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        .stack-layer:hover img,
+        .stack-layer:hover svg {
+            transform: scale(1.2) rotate(360deg);
+        }
+
+        .stack-layer span {
+            color: #e0e0e0;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-card {
+            transition: all 0.3s ease;
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+        }
+
+        .project-card:hover {
+            border-color: #ff6b35;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.2);
         }
         
         @keyframes typing {
@@ -180,7 +286,7 @@
             transform: translateY(-50%);
             width: 8px;
             height: 1.2em;
-            background-color: #22c55e; /* green-500 */
+            background-color: #c301c6; /* green-500 */
             animation: blink 0.8s steps(1) infinite;
         }
 
@@ -224,21 +330,20 @@
                     <!-- Profile Image -->
                     <div class="fade-in flex-shrink-0">
                         <div class="relative group">
-                            <div class="absolute -inset-1 bg-gradient-to-r from-orange-500 to-green-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+                            <div class="absolute -inset-1 bg-gradient-to-r from-orange-500 to-fuchsia-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
                             <img src="profile.jpg" alt="Noel Young" class="relative w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-gray-900">
                         </div>
                     </div>
                     <div class="w-full">
-                        <div class="text-3xl md:text-4xl text-gray-200 text-center mt-8 mb-2 font-bold">Noel Young</div>
-                        <div class="text-sm text-gray-400 mb-4 text-center">Sr. Software Engineer</div>
+                        <div class="text-3xl md:text-4xl text-gray-200 text-center mt-8 mb-4 font-bold">Noel Young</div>
                         <div class="w-72 m-auto text-center">
-                            <span class="px-4 py-2 text-xs text-orange-700">Problem Solving</span>
+                            <span class="px-4 py-2 text-xs text-fuchsia-500">Problem Solving</span>
                             <span class="px-4 py-2 text-xs text-orange-500">Communication</span>
                             <span class="px-4 py-2 text-xs text-orange-600">Ownership</span>
-                            <span class="px-4 py-2 text-xs text-orange-900">Leadership</span>
-                            <span class="px-4 py-2 text-xs text-orange-700">Discipline</span>
+                            <span class="px-4 py-2 text-xs text-fuchsia-500">Leadership</span>
+                            <span class="px-4 py-2 text-xs text-fuchsia-600">Discipline</span>
                             <span class="px-4 py-2 text-xs text-orange-600">Pragmatic</span>
-                            <span class="px-4 py-2 text-xs text-orange-900">Collaboration</span>
+                            <span class="px-4 py-2 text-xs text-orange-600">Collaboration</span>
                         </div>
                     </div>
                 </div>
@@ -252,9 +357,9 @@
                     </h1>
                     <div class="flex gap-4 justify-center md:justify-start mb-12 flex-wrap">
                         <span class="font-mono px-4 py-2 bg-orange-500 bg-opacity-10 text-orange-500 rounded-lg border border-orange-500 border-opacity-30 w-150">
-                            Backend Specialist
+                            Full-Stack Specialist
                         </span>
-                        <div class="px-4 py-2 pr-0 mr-4 w-72 bg-green-500 bg-opacity-10 text-green-500 rounded-lg border border-green-500 border-opacity-30">
+                        <div class="px-4 py-2 pr-0 mr-4 w-72 bg-fuchsia-500 bg-opacity-10 text-fuchsia-500 rounded-lg border border-fuchsia-500 border-opacity-30">
                         <span
                                 id="role-badge"
                                 class="typewriter font-mono"
@@ -264,11 +369,11 @@
                     </div>
                     <div class="flex gap-4 justify-center md:justify-start mb-12 flex-wrap">
                         <div class="is-uppercase p-0">
-                            <p class="text-5xl md:text-7xl font-bold text-orange-400">+14</p>
+                            <p class="text-5xl md:text-7xl font-bold text-fuchsia-400">+14</p>
                             <span>Years of experience</span>
                         </div>
                     </div>
-                    <a href="#about" class="inline-block px-8 py-3 bg-gradient-to-r from-orange-500 to-green-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-orange-500/50 transition-all duration-300 transform hover:scale-105">
+                    <a href="#about" class="inline-block px-8 py-3 bg-gradient-to-r from-orange-500 to-fuchsia-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-orange-500/50 transition-all duration-300 transform hover:scale-105">
                         View My Work
                     </a>
                 </div>
@@ -288,7 +393,7 @@
                     well, yes. But what am I looking for, isn't that where I would bring the most benefit. A place where
                     I can live my passions and achieve organisation goals through them?</p>
                 <div class="w-full h-auto">
-                    <video src="/videos/my-video.mp4" controls class="w-full rounded-lg"></video>
+                    <video src="video.mp4" controls class="w-full rounded-lg"></video>
                 </div>
             </div>
 
@@ -319,27 +424,62 @@
     <!-- Projects Section -->
     <section id="projects" class="py-20 px-6">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold mb-12 text-center fade-in">
-                <span class="text-orange-500 font-mono"></span> Notable Projects
-            </h2>
+            <h2 class="text-4xl font-bold mb-12 text-center fade-in">Notable Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <!-- Project 1 -->
-            <div class="project-card rounded-lg p-6 scale-in w-80 h-48 overflow-hidden relative">
-                <h3 class="text-xl font-bold text-white">Asterisk VoIP Switchboard</h3>
-                <div class="text-orange-500 font-mono text-sm">Switch Telecom</div>
+                <!-- Project 1 -->
+                <div class="project-card rounded-lg p-6 scale-in h-48 overflow-hidden relative">
+                    <h3 class="text-xl font-bold text-white mb-1">Asterisk VoIP Switchboard</h3>
+                    <div class="text-orange-500 font-mono text-sm">Switch Telecom</div>
 
-                <p class="text-gray-400 mt-2 text-sm line-clamp-3">
-                    I had the opportunity to work with Noel for over two years…
-                </p>
+                    <p class="text-gray-400 mt-2 text-sm line-clamp-3">
+                        I had the opportunity to work with Noel for over two years…
+                    </p>
 
-                <button onclick="openDialog()"
-                        class="absolute bottom-4 right-4 text-orange-500 hover:text-green-400 font-mono text-sm">
-                    View full →
-                </button>
+                    <button onclick="openDialog('asterisk-voip-dialog')"
+                            class="absolute bottom-4 right-4 text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
+                        View full →
+                    </button>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card rounded-lg p-6 scale-in h-52 overflow-hidden relative">
+                    <h3 class="text-xl font-bold text-white mb-1">Nintendo Payment Gateway</h3>
+                    <div class="text-orange-500 font-mono text-sm">Actindo AG</div>
+
+                    <p class="text-gray-400 mt-2 text-sm line-clamp-3">
+                        I had the opportunity to work with Noel for over two years…
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-4 mt-4">
+                        <span class="text-xs px-2 py-1 bg-orange-500 bg-opacity-20 text-orange-500 rounded font-mono">PHP</span>
+                        <span class="text-xs px-2 py-1 bg-fuchsia-500 bg-opacity-20 text-fuchsia-500 rounded font-mono">Polymer</span>
+                        <span class="text-xs px-2 py-1 bg-gray-700 text-gray-300 rounded font-mono">MySQL</span>
+                    </div>
+
+                    <button onclick="openDialog('nintendo-payment-gateway-dialog')"
+                            class="absolute bottom-4 right-4 text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
+                        View full →
+                    </button>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card rounded-lg p-6 scale-in h-48 overflow-hidden relative">
+                    <h3 class="text-xl font-bold text-white mb-1">New Car Aggregator</h3>
+                    <div class="text-orange-500 font-mono text-sm">Nift</div>
+
+                    <p class="text-gray-400 mt-2 text-sm line-clamp-3">
+                        I had the opportunity to work with Noel for over two years…
+                    </p>
+
+                    <button onclick="openDialog()"
+                            class="absolute bottom-4 right-4 text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
+                        View full →
+                    </button>
+                </div>
             </div>
-
         </div>
-        <div id="testimonial-dialog"
+        <div id="asterisk-voip-dialog"
              class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden">
             <div class="bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
                 <h3 class="text-2xl font-bold mb-2 text-white">Asterisk Voip</h3>
@@ -354,8 +494,29 @@
                     I would confidently recommend Noel for any senior software engineer role…
                 </p>
 
-                <button onclick="closeDialog()"
-                        class="mt-4 text-orange-500 hover:text-green-400 font-mono">
+                <button onclick="closeDialog('asterisk-voip-dialog')"
+                        class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono">
+                    Close ✕
+                </button>
+            </div>
+        </div>
+        <div id="nintendo-payment-gateway-dialog"
+             class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden">
+            <div class="bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
+                <h3 class="text-2xl font-bold mb-2 text-white">Nintendo Payment Gateway</h3>
+
+                <p class="text-gray-300 mb-4 leading-relaxed">
+                    I had the opportunity to work with Noel for over two years, during which …
+                </p>
+                <p class="text-gray-300 mb-4 leading-relaxed">
+                    One of his most impactful contributions was integrating…
+                </p>
+                <p class="text-gray-300 mb-4 leading-relaxed">
+                    I would confidently recommend Noel for any senior software engineer role…
+                </p>
+
+                <button onclick="closeDialog('nintendo-payment-gateway-dialog')"
+                        class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono">
                     Close ✕
                 </button>
             </div>
@@ -365,161 +526,110 @@
     <!-- Skills Section -->
     <section id="skills" class="py-20 px-6 bg-black bg-opacity-50">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold mb-12 text-center fade-in">Technical Stack</h2>
+            <h2 class="text-4xl font-bold mb-12 text-center fade-in">Skills</h2>
             <div class="grid md:grid-cols-2 gap-8">
-                <p>Stack the tech's into a literal stack</p>
                 <!-- Backend -->
                 <div class="slide-in-left">
-                    <h3 class="text-2xl font-semibold mb-6 text-green-500 font-mono">// Backend</h3>
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-500 font-mono">Backend</h3>
                     <div class="flex flex-wrap gap-3">
-                        <span class="tech-badge px-4 py-2 bg-orange-500 bg-opacity-10 text-orange-500 rounded-lg border border-orange-500 border-opacity-30 font-mono">PHP</span>
-                        <span class="tech-badge px-4 py-2 bg-orange-500 bg-opacity-10 text-orange-500 rounded-lg border border-orange-500 border-opacity-30 font-mono">Laravel</span>
-                        <span class="tech-badge px-4 py-2 bg-orange-500 bg-opacity-10 text-orange-500 rounded-lg border border-orange-500 border-opacity-30 font-mono">Symfony</span>
-                        <span class="tech-badge px-4 py-2 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">MySQL</span>
-                        <span class="tech-badge px-4 py-2 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">PostgreSQL</span>
-                        <span class="tech-badge px-4 py-2 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">Redis</span>
-                        <span class="tech-badge px-4 py-2 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">REST APIs</span>
+                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-indigo-500 bg-opacity-10 text-indigo-500 rounded-lg border border-indigo-500 border-opacity-30 font-mono">
+                          <img src="https://cdn.simpleicons.org/php?viewbox=auto&size=20" alt="PHP" class="">
+                        </span>
+                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-sky-500 bg-opacity-10 text-sky-500 rounded-lg border border-sky-500 border-opacity-30 font-mono">
+                          <img src="https://cdn.simpleicons.org/go?viewbox=auto&size=20" alt="Go" class="">
+                        </span>
+                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-yellow-500 bg-opacity-10 text-yellow-500 rounded-lg border border-yellow-500 border-opacity-30 font-mono">
+                          <img src="https://cdn.simpleicons.org/python?viewbox=auto&size=20" alt="Python" class=""> Python
+                        </span>
+                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-red-500 bg-opacity-10 text-red-500 rounded-lg border border-red-500 border-opacity-30 font-mono">
+                          <img src="https://cdn.simpleicons.org/laravel?viewbox=auto&size=20" alt="Laravel" class="">
+                            Laravel
+                        </span>
+                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-gray-100 bg-opacity-10 text-white rounded-lg border border-gray-500 border-opacity-30 font-mono">
+                          <img src="https://cdn.simpleicons.org/symfony?viewbox=auto&size=20" alt="Symfony" class="">
+                            Symfony
+                        </span>
+                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-orange-500 bg-opacity-10 text-orange-500 rounded-lg border border-orange-500 border-opacity-30 font-mono">
+                            <img src="https://cdn.simpleicons.org/mysql?viewbox=auto&size=20" alt="MySQL" class="">
+                        </span>
+                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-blue-500 bg-opacity-10 text-blue-500 rounded-lg border border-blue-500 border-opacity-30 font-mono">
+                            <img src="https://cdn.simpleicons.org/postgresql?viewbox=auto&size=20" alt="PostgreSQL" class="">PostgreSQL
+                        </span>
+                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-red-500 bg-opacity-10 text-red-500 rounded-lg border border-red-500 border-opacity-30 font-mono">
+                            <img src="https://cdn.simpleicons.org/redis?viewbox=auto&size=20" alt="Redis" class="">Redis
+                        </span>
+                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-orange-500 bg-opacity-10 text-orange-500 rounded-lg border border-orange-500 border-opacity-30 font-mono">
+                            <img src="https://cdn.simpleicons.org/rabbitmq?viewbox=auto&size=20" alt="Rabbit MQ" class="">Rabbit MQ
+                        </span>
+                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-red-500 bg-opacity-10 text-red-500 rounded-lg border border-red-500 border-opacity-30 font-mono">
+                            <img src="https://cdn.simpleicons.org/codeigniter?viewbox=auto&size=20" alt="CodeIgniter" class="">CodeIgniter
+                        </span>
                     </div>
                 </div>
-                
+
                 <!-- Frontend -->
                 <div class="slide-in-right">
-                    <h3 class="text-2xl font-semibold mb-6 text-green-500 font-mono">// Frontend</h3>
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-500 font-mono">Frontend</h3>
                     <div class="flex flex-wrap gap-3">
-                        <span class="tech-badge px-4 py-2 bg-green-500 bg-opacity-10 text-green-500 rounded-lg border border-green-500 border-opacity-30 font-mono">Vue.js</span>
-                        <span class="tech-badge px-4 py-2 bg-green-500 bg-opacity-10 text-green-500 rounded-lg border border-green-500 border-opacity-30 font-mono">React</span>
-                        <span class="tech-badge px-4 py-2 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">JavaScript</span>
-                        <span class="tech-badge px-4 py-2 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">HTML5</span>
-                        <span class="tech-badge px-4 py-2 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">CSS3</span>
-                        <span class="tech-badge px-4 py-2 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">Tailwind CSS</span>
+                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-green-500 bg-opacity-10 text-green-500 rounded-lg border border-green-500 border-opacity-30 font-mono">
+                          <img src="https://cdn.simpleicons.org/vuedotjs?viewbox=auto&size=20" alt="VueJs" class="">VueJs
+                        </span>
+                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-cyan-500 bg-opacity-10 text-cyan-500 rounded-lg border border-cyan-500 border-opacity-30 font-mono">
+                          <img src="https://cdn.simpleicons.org/react?viewbox=auto&size=20" alt="React" class="">React
+                        </span>
+                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-yellow-500 bg-opacity-10 text-yellow-500 rounded-lg border border-yellow-500 border-opacity-30 font-mono">
+                          <img src="https://cdn.simpleicons.org/javaScript?viewbox=auto&size=20" alt="JavaScript" class="">JavaScript
+                        </span>
+                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-orange-500 bg-opacity-10 text-orange-500 rounded-lg border border-orange-500 border-opacity-30 font-mono">
+                          <img src="https://cdn.simpleicons.org/HTML5?viewbox=auto&size=20" alt="HTML5" class="">HTML5
+                        </span>
+                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-fuchsia-500 bg-opacity-10 text-fuchsia-500 rounded-lg border border-fuchsia-500 border-opacity-30 font-mono">
+                          <img src="https://cdn.simpleicons.org/css?viewbox=auto&size=20" alt="CSS" class="">CSS
+                        </span>
+                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-sky-500 bg-opacity-10 text-sky-500 rounded-lg border border-sky-500 border-opacity-30 font-mono">
+                          <img src="https://cdn.simpleicons.org/TailwindCSS?viewbox=auto&size=20" alt="Tailwind CSS" class="">Tailwind CSS
+                        </span>
                     </div>
                 </div>
-                
+
                 <!-- DevOps & Tools -->
                 <div class="slide-in-left">
-                    <h3 class="text-2xl font-semibold mb-6 text-green-500 font-mono">// DevOps & Tools</h3>
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-500 font-mono">DevOps & Tools</h3>
                     <div class="flex flex-wrap gap-3">
-                        <span class="tech-badge px-4 py-2 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">Docker</span>
-                        <span class="tech-badge px-4 py-2 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">Git</span>
-                        <span class="tech-badge px-4 py-2 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">CI/CD</span>
-                        <span class="tech-badge px-4 py-2 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">AWS</span>
-                        <span class="tech-badge px-4 py-2 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">Linux</span>
-                        <span class="tech-badge px-4 py-2 bg-gray-700 bg-opacity-50 text-fuchsia-300 rounded-lg border border-fuchsia-600 font-mono">Documentation</span>
-                        <span class="tech-badge px-4 py-2 bg-gray-700 bg-opacity-50 text-fuchsia-300 rounded-lg border border-fuchsia-600 font-mono">Diagramming</span>
+                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-sky-500 bg-opacity-10 text-sky-500 rounded-lg border border-sky-500 border-opacity-30 font-mono">
+                          <img src="https://cdn.simpleicons.org/docker?viewbox=auto&size=20" alt="Docker" class="">Docker
+                        </span>
+                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-red-500 bg-opacity-10 text-red-500 rounded-lg border border-red-500 border-opacity-30 font-mono">
+                          <img src="https://cdn.simpleicons.org/Git?viewbox=auto&size=20" alt="Git" class="">Git
+                        </span>
+                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-white-500 bg-opacity-10 text-white-500 rounded-lg border border-white-500 border-opacity-30 font-mono">
+                          <img src="https://cdn.simpleicons.org/gitextensions?viewbox=auto&size=20" alt="CI/CD" class="">CI/CD
+                        </span>
+                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-orange-500 bg-opacity-10 text-orange-500 rounded-lg border border-orange-500 border-opacity-30 font-mono">
+                          <img src="https://cdn.simpleicons.org/Asterisk?viewbox=auto&size=20" alt="Asterisk" class="">Asterisk
+                        </span>
+                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-black-500 bg-opacity-10 text-black-500 rounded-lg border border-black-500 border-opacity-30 font-mono">
+                          <img src="https://cdn.simpleicons.org/Linux?viewbox=auto&size=20" alt="Linux" class="">Linux
+                        </span>
+                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-yellow-500 bg-opacity-10 text-yellow-500 rounded-lg border border-yellow-500 border-opacity-30 font-mono">
+                          <img src="https://cdn.simpleicons.org/doctrine?viewbox=auto&size=20" alt="Doctrine" class="">Doctrine
+                        </span>
+                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-gray-500 bg-opacity-10 text-gray-500 rounded-lg border border-gray-500 border-opacity-30 font-mono">
+                          <img src="https://cdn.simpleicons.org/readthedocs?viewbox=auto&size=20" alt="Doctrine" class="">Documentation
+                        </span>
                     </div>
                 </div>
-                
+
                 <!-- Architecture -->
                 <div class="slide-in-right">
-                    <h3 class="text-2xl font-semibold mb-6 text-green-500 font-mono">// Architecture & Patterns</h3>
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-500 font-mono">Architecture & Patterns</h3>
                     <div class="flex flex-wrap gap-3">
-                        <span class="tech-badge px-4 py-2 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">Microservices</span>
-                        <span class="tech-badge px-4 py-2 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">Event-Driven</span>
-                        <span class="tech-badge px-4 py-2 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">RESTful Design</span>
-                        <span class="tech-badge px-4 py-2 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">SOLID Principles</span>
-                        <span class="tech-badge px-4 py-2 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">TDD</span>
-                        <span class="tech-badge px-4 py-2 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">Data Structures</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="space-y-4 mt-6 fade-in">
-                <h3 class="text-2xl font-semibold mb-6 text-green-500 font-mono">// Experience</h3>
-                <!-- PHP -->
-                <div>
-                    <div class="flex items-center justify-between mb-1">
-                        <span class="font-mono text-sm text-orange-400">PHP</span>
-                        <span class="text-xs text-gray-400">14+ yrs</span>
-                    </div>
-                    <div class="h-2 w-full bg-gray-800 rounded-full overflow-hidden">
-                        <div
-                            class="h-full bg-orange-500 bg-opacity-80 rounded-full"
-                            style="width: 95%;"
-                        ></div>
-                    </div>
-                </div>
-
-                <!-- Laravel -->
-                <div>
-                    <div class="flex items-center justify-between mb-1">
-                        <span class="font-mono text-sm text-orange-400">Laravel</span>
-                        <span class="text-xs text-gray-400">8+ yrs</span>
-                    </div>
-                    <div class="h-2 w-full bg-gray-800 rounded-full overflow-hidden">
-                        <div
-                            class="h-full bg-orange-500 bg-opacity-80 rounded-full"
-                            style="width: 85%;"
-                        ></div>
-                    </div>
-                </div>
-
-                <!-- Symfony -->
-                <div>
-                    <div class="flex items-center justify-between mb-1">
-                        <span class="font-mono text-sm text-orange-400">Symfony</span>
-                        <span class="text-xs text-gray-400">5+ yrs</span>
-                    </div>
-                    <div class="h-2 w-full bg-gray-800 rounded-full overflow-hidden">
-                        <div
-                            class="h-full bg-orange-500 bg-opacity-80 rounded-full"
-                            style="width: 70%;"
-                        ></div>
-                    </div>
-                </div>
-
-                <!-- MySQL -->
-                <div>
-                    <div class="flex items-center justify-between mb-1">
-                        <span class="font-mono text-sm text-gray-300">MySQL</span>
-                        <span class="text-xs text-gray-400">12+ yrs</span>
-                    </div>
-                    <div class="h-2 w-full bg-gray-800 rounded-full overflow-hidden">
-                        <div
-                            class="h-full bg-gray-300 rounded-full"
-                            style="width: 90%;"
-                        ></div>
-                    </div>
-                </div>
-
-                <!-- PostgreSQL -->
-                <div>
-                    <div class="flex items-center justify-between mb-1">
-                        <span class="font-mono text-sm text-gray-300">PostgreSQL</span>
-                        <span class="text-xs text-gray-400">4+ yrs</span>
-                    </div>
-                    <div class="h-2 w-full bg-gray-800 rounded-full overflow-hidden">
-                        <div
-                            class="h-full bg-gray-300 rounded-full"
-                            style="width: 60%;"
-                        ></div>
-                    </div>
-                </div>
-
-                <!-- Redis -->
-                <div>
-                    <div class="flex items-center justify-between mb-1">
-                        <span class="font-mono text-sm text-gray-300">Redis</span>
-                        <span class="text-xs text-gray-400">6+ yrs</span>
-                    </div>
-                    <div class="h-2 w-full bg-gray-800 rounded-full overflow-hidden">
-                        <div
-                            class="h-full bg-gray-300 rounded-full"
-                            style="width: 75%;"
-                        ></div>
-                    </div>
-                </div>
-
-                <!-- REST APIs -->
-                <div>
-                    <div class="flex items-center justify-between mb-1">
-                        <span class="font-mono text-sm text-gray-300">REST APIs</span>
-                        <span class="text-xs text-gray-400">10+ yrs</span>
-                    </div>
-                    <div class="h-2 w-full bg-gray-800 rounded-full overflow-hidden">
-                        <div
-                            class="h-full bg-gray-300 rounded-full"
-                            style="width: 90%;"
-                        ></div>
+                        <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">Microservices</span>
+                        <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">Event-Driven</span>
+                        <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">RESTful Design</span>
+                        <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">SOLID Principles</span>
+                        <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">TDD</span>
+                        <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">Data Structures</span>
                     </div>
                 </div>
             </div>
@@ -529,207 +639,113 @@
     <!-- Recommendations Section -->
     <section id="recommendations" class="py-20 px-6">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold mb-12 text-center fade-in">
-                <span class="text-orange-500 font-mono"></span> Recommendations
-            </h2>
+            <h2 class="text-4xl font-bold mb-12 text-center fade-in">Recommendations</h2>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project Card 1 -->
+                <!-- Project Card 1 - Stefan Walke -->
                 <div class="project-card rounded-lg p-6 scale-in">
                     <div class="w-full">
                         <h3 class="text-2xl font-bold mb-1 text-white">Stefan Walke</h3>
                         <div class="text-orange-500 font-mono text-sm mb-0">Engineering Manager @ Actindo AG</div>
-                        <div class="text-green-400 font-mono text-sm mb-2">Actindo AG</div>
+                        <div class="text-fuchsia-400 font-mono text-sm mb-2">Actindo AG</div>
                     </div>
                     <p class="text-gray-400 mb-4 leading-relaxed">
-                        I had the opportunity to work with Noel for over two years, during which he consistently proved himself to be a highly reliable and capable software engineer. Beyond his strong technical foundation, what stood out most was his sense of ownership. He took end-to-end responsibility for his work, communicated clearly with both internal teams and external stakeholders, and always pushed tasks through to completion.
+                        I had the opportunity to work with Noel for over two years, during which he consistently proved
+                        himself to be a highly reliable and capable software engineer. Beyond his strong technical
+                        foundation, what stood out most was his sense of ownership...
+
                     </p>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
-                        One of his most impactful contributions was integrating a complex payment process into an already established business workflow. It was a challenging piece of work with many dependencies, and he handled it with professionalism and care.
-                    </p>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
-                        I would confidently recommend Noel for any senior software engineer role. He brings solid technical skills, strong communication, and a dependable work ethic to any team.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-xs px-2 py-1 bg-orange-500 bg-opacity-20 text-orange-500 rounded font-mono">PHP</span>
-                        <span class="text-xs px-2 py-1 bg-green-500 bg-opacity-20 text-green-500 rounded font-mono">Polymer</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 text-gray-300 rounded font-mono">MySQL</span>
-                    </div>
-                    <div class="flex gap-4">
-                        <a href="https://www.linkedin.com/in/noeljyoung/details/recommendations/" class="text-orange-500 hover:text-green-400 font-mono text-sm">Read more →</a>
-                    </div>
+                    <button onclick="openDialog('stefan-walke-dialog')"
+                            class="text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
+                        View full →
+                    </button>
                 </div>
 
-                <!-- Project Card 2 -->
+                <!-- Project Card 2  - Richards-->
                 <div class="project-card rounded-lg p-6 scale-in" style="transition-delay: 0.1s;">
                     <div class="w-full">
                         <h3 class="text-2xl font-bold mb-1 text-white">Richards Saji</h3>
                         <div class="text-orange-500 font-mono text-sm mb-0">QA Lead</div>
-                        <div class="text-green-400 font-mono text-sm mb-2">Actindo AG</div>
+                        <div class="text-fuchsia-400 font-mono text-sm mb-2">Actindo AG</div>
                     </div>
                     <p class="text-gray-400 mb-4 leading-relaxed">
                         I had the opportunity to work with Noel, a dependable and collaborative Senior Backend Engineer,
                         during our work on the Nintendo project at Actindo, including the major Payment Gateway
-                        migration initiative.
+                        migration initiative...
                     </p>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
-                        Noel is the kind of engineer every QA wishes to work with. His documentation is clear,
-                        thoughtful, and genuinely helpful, making it effortless to understand the flow, impacts, and
-                        expectations of each feature. He consistently provided meaningful implementation notes and
-                        straightforward testing guidance that saved time, eliminated confusion, and made the entire QA
-                        process faster and more reliable.
-                    </p>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
-                        One thing that genuinely stood out: his tickets were always a pleasure to test. They were
-                        well-prepared, stable, and often passed on the first run. That level of quality doesn’t happen
-                        by accident—it reflects his strong discipline, careful thinking, and commitment to doing things
-                        right.
-                    </p>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
-                        Beyond the technical side, Noel is proactive, calm under pressure, and always ready to support
-                        the team. From day one, he brought steady contribution, ownership, and maturity to the project.
-                        His communication is direct and effective, and working with him feels smooth, productive, and
-                        truly collaborative.
-                    </p>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
-                        Noel is not just a strong backend engineer—he’s a team player who elevates everyone around him.
-                        Any team would be lucky to have him, and I highly recommend him without hesitation.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-xs px-2 py-1 bg-orange-500 bg-opacity-20 text-orange-500 rounded font-mono">PHP</span>
-                        <span class="text-xs px-2 py-1 bg-green-500 bg-opacity-20 text-green-500 rounded font-mono">React</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 text-gray-300 rounded font-mono">PostgreSQL</span>
-                    </div>
-                    <div class="flex gap-4">
-                        <a href="#" class="text-orange-500 hover:text-orange-400 font-mono text-sm">View Code →</a>
-                        <a href="#" class="text-green-500 hover:text-green-400 font-mono text-sm">Live Demo →</a>
-                    </div>
+
+                    <button onclick="openDialog('richards-saji-dialog')"
+                            class="text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right float-right">
+                        View full →
+                    </button>
                 </div>
 
-                <!-- Project Card 3 -->
+                <!-- Project Card 3 - Mike -->
                 <div class="project-card rounded-lg p-6 scale-in" style="transition-delay: 0.1s;">
                     <div class="w-full">
                         <h3 class="text-2xl font-bold mb-1 text-white">Mike Rockétt</h3>
                         <div class="text-orange-500 font-mono text-sm mb-0">Lead Software Developer</div>
-                        <div class="text-green-400 font-mono text-sm mb-2">Megafreight Services</div>
+                        <div class="text-fuchsia-400 font-mono text-sm mb-2">Megafreight Services</div>
                     </div>
                     <p class="text-gray-400 mb-4 leading-relaxed">
-                        Noel and I worked together for nearly two years, building features to replace a legacy exports
-                        forwarding system that was being shut down. While I focused on operational functions, Noel
-                        concentrated on the financial side, from invoicing, to financial-system integrations, to
-                        approvals and reporting. We worked closely to ensure everything came together seamlessly, and I
-                        was impressed by the meticulous thought he put into both understanding problems and crafting
-                        their solutions. His work was excellent, and he developed valuable expertise and knowledge in
-                        freight forwarding – an industry that anyone seasoned enough will tell you is far from
-                        straightforward – as well as financial business functions more broadly.
+                        Noel is an excellent backend engineer, and any team would be lucky to have him...
                     </p>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
-                        Noel is an excellent backend engineer, and any team would be lucky to have him.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-xs px-2 py-1 bg-orange-500 bg-opacity-20 text-orange-500 rounded font-mono">Laravel</span>
-                        <span class="text-xs px-2 py-1 bg-green-500 bg-opacity-20 text-green-500 rounded font-mono">VueJS</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 text-gray-300 rounded font-mono">PostgreSQL</span>
-                    </div>
-                    <div class="flex gap-4">
-                        <a href="#" class="text-orange-500 hover:text-orange-400 font-mono text-sm">View Code →</a>
-                        <a href="#" class="text-green-500 hover:text-green-400 font-mono text-sm">Live Demo →</a>
-                    </div>
+                    <button onclick="openDialog('mike-rockett-dialog')"
+                            class="text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
+                        View full →
+                    </button>
                 </div>
 
-                <!-- Project Card 4 -->
+                <!-- Project Card 4 - Stefan Muller -->
                 <div class="project-card rounded-lg p-6 scale-in" style="transition-delay: 0.1s;">
                     <div class="w-full">
                         <h3 class="text-2xl font-bold mb-1 text-white">Stefan Müller</h3>
                         <div class="text-orange-500 font-mono text-sm mb-0">Senior Account Director</div>
-                        <div class="text-green-400 font-mono text-sm mb-2">Thinkproject</div>
+                        <div class="text-fuchsia-400 font-mono text-sm mb-2">Thinkproject</div>
                     </div>
                     <p class="text-gray-400 mb-4 leading-relaxed">
                         I’ve had the privilege of knowing Noel for many years, and in that time he has consistently
                         impressed me with his extraordinary intelligence, discipline, and integrity. Noel is one of the
-                        most meticulous and calculated individuals I’ve ever met. He approaches every challenge with a
-                        level of thoughtfulness and precision that is rare, and it’s no surprise that he is a member of
-                        Mensa. His analytical ability and problem-solving skills are truly exceptional.
+                        most meticulous and calculated individuals I’ve ever met...
                     </p>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
-                        Beyond his intellectual strengths, Noel possesses an extraordinary capacity for self-discipline.
-                        Having completed numerous ultramarathons, he has repeatedly demonstrated a level of commitment,
-                        resilience, and mental toughness that few people ever develop. Whether he is pursuing personal
-                        goals or taking on professional responsibilities, Noel approaches everything with the same
-                        relentless determination to achieve excellence.
-                    </p>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
-                        Any organisation would be fortunate to have someone of Noel’s calibre. He brings intelligence,
-                        focus, reliability, and a deep sense of purpose to everything he does. I consider myself
-                        fortunate to call him a long-time friend, and I wholeheartedly recommend him.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-xs px-2 py-1 bg-orange-500 bg-opacity-20 text-orange-500 rounded font-mono">PHP</span>
-                        <span class="text-xs px-2 py-1 bg-green-500 bg-opacity-20 text-green-500 rounded font-mono">React</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 text-gray-300 rounded font-mono">PostgreSQL</span>
-                    </div>
-                    <div class="flex gap-4">
-                        <a href="#" class="text-orange-500 hover:text-orange-400 font-mono text-sm">View Code →</a>
-                        <a href="#" class="text-green-500 hover:text-green-400 font-mono text-sm">Live Demo →</a>
-                    </div>
+                    <button onclick="openDialog('stefan-muller-dialog')"
+                            class="text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
+                        View full →
+                    </button>
                 </div>
 
-                <!-- Project Card 5 -->
+                <!-- Project Card 5 - Lourens -->
                 <div class="project-card rounded-lg p-6 scale-in" style="transition-delay: 0.1s;">
                     <div class="w-full">
                         <h3 class="text-2xl font-bold mb-1 text-white">Lourens Nortje</h3>
                         <div class="text-orange-500 font-mono text-sm mb-0">Managing Director</div>
-                        <div class="text-green-400 font-mono text-sm mb-2">Starbright Solutions</div>
+                        <div class="text-fuchsia-400 font-mono text-sm mb-2">Starbright Solutions</div>
                     </div>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
-                        I had the pleasure of working with Noel as a PHP developer at our company from 2011 to 2014. He
-                        started with no PHP knowledge, but he put in the work to learn it thoroughly. In just a short
-                        time, he turned into a reliable PHP developer, handling all the skills you'd expect from someone
-                        with years on the job.
-                    </p>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
-                        Noel always stepped up, taking charge and owning every task we gave him. He played a key part in
-                        building our development process, creating benchmarks for developers and designing assessments
-                        for new hires. He showed real leadership and drive throughout.
-                    </p>
+
                     <p class="text-gray-400 mb-4 leading-relaxed">
                         On top of that, Noel kept pushing himself by studying while holding down his full-time role.
-                        If I had the chance to hire him again? Absolutely, without a doubt.
+                        If I had the chance to hire him again? Absolutely, without a doubt...
                     </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-xs px-2 py-1 bg-orange-500 bg-opacity-20 text-orange-500 rounded font-mono">Drupal</span>
-                        <span class="text-xs px-2 py-1 bg-green-500 bg-opacity-20 text-green-500 rounded font-mono">PHP</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 text-gray-300 rounded font-mono">MySQL</span>
-                    </div>
-                    <div class="flex gap-4">
-                        <a href="#" class="text-orange-500 hover:text-orange-400 font-mono text-sm">View Code →</a>
-                        <a href="#" class="text-green-500 hover:text-green-400 font-mono text-sm">Live Demo →</a>
-                    </div>
+                    <button onclick="openDialog('lourens-nortje-dialog')"
+                            class="text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
+                        View full →
+                    </button>
                 </div>
 
-                <!-- Project Card 6 -->
+                <!-- Project Card 6 - Alain -->
                 <div class="project-card rounded-lg p-6 scale-in" style="transition-delay: 0.1s;">
                     <div class="w-full">
                         <h3 class="text-2xl font-bold mb-1 text-white">Alain Jacquet</h3>
                         <div class="text-orange-500 font-mono text-sm mb-0">Managing Director</div>
-                        <div class="text-green-400 font-mono text-sm mb-2">SABEeX</div>
+                        <div class="text-fuchsia-400 font-mono text-sm mb-2">SABEeX</div>
                     </div>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
-                        When I began development of the SABEeX Delivery Management System, I engaged Noel Young as an energetic and skilled developer. During his time with SABEeX, he built the original platform that is today one of the world's leading Online Procurement Platforms. His insight into the architecture design and robust construction helped to establish a legacy.
-                        He went on to build services other world-renowned platforms.
-                    </p>
                     <p class="text-gray-400 mb-4 leading-relaxed">
                         He's a legend!
                     </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-xs px-2 py-1 bg-orange-500 bg-opacity-20 text-orange-500 rounded font-mono">PHP</span>
-                        <span class="text-xs px-2 py-1 bg-green-500 bg-opacity-20 text-green-500 rounded font-mono">CodeIgniter</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 text-gray-300 rounded font-mono">MySQL</span>
-                    </div>
-                    <div class="flex gap-4">
-                        <a href="#" class="text-orange-500 hover:text-orange-400 font-mono text-sm">View Code →</a>
-                        <a href="#" class="text-green-500 hover:text-green-400 font-mono text-sm">Live Demo →</a>
-                    </div>
+                    <button onclick="openDialog('alain-jacquet-dialog')"
+                            class="text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
+                        View full →
+                    </button>
                 </div>
 
             </div>
@@ -739,9 +755,7 @@
     <!-- Contact Section -->
     <section id="contact" class="py-20 px-6 bg-black bg-opacity-50">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-8 fade-in">
-                <span class="text-orange-500 font-mono"></span> Get In Touch
-            </h2>
+            <h2 class="text-4xl font-bold mb-8 fade-in">Get In Touch</h2>
             <p class="text-gray-400 text-lg mb-12 fade-in">
                 I'm always open to discussing new projects, opportunities, or technical collaborations.
             </p>
@@ -762,7 +776,7 @@
                     GitHub
                 </a>
                 
-                <a href="https://www.linkedin.com/in/noeljyoung/" target="_blank" rel="noopener" class="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg hover:shadow-lg hover:shadow-green-500/50 transition-all duration-300 transform hover:scale-105">
+                <a href="https://www.linkedin.com/in/noeljyoung/" target="_blank" rel="noopener" class="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-fuchsia-500 to-fuchsia-600 text-white rounded-lg hover:shadow-lg hover:shadow-fuchsia-500/50 transition-all duration-300 transform hover:scale-105">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"></path>
                     </svg>
@@ -780,6 +794,207 @@
         </div>
     </footer>
 
+    <!-- Stefan Walke Dialog -->
+    <div id="stefan-walke-dialog"
+         class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden slide-in-left">
+        <div class="bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
+            <h3 class="text-2xl font-bold mb-1 text-white">Stefan Walke</h3>
+            <div class="text-orange-500 font-mono text-sm mb-0">Engineering Manager</div>
+            <div class="text-fuchsia-400 font-mono text-sm mb-2">Actindo AG</div>
+
+            <p class="text-gray-400 mb-4 leading-relaxed">
+                I had the opportunity to work with Noel for over two years, during which he consistently proved
+                himself to be a highly reliable and capable software engineer. Beyond his strong technical
+                foundation, what stood out most was his sense of ownership. He took end-to-end responsibility
+                for his work, communicated clearly with both internal teams and external stakeholders, and
+                always pushed tasks through to completion.
+            </p>
+
+            <p class="text-gray-400 mb-4 leading-relaxed">
+                One of his most impactful contributions was integrating a complex payment process into an
+                already established business workflow. It was a challenging piece of work with many
+                dependencies, and he handled it with professionalism and care.
+            </p>
+            <p class="text-gray-400 mb-4 leading-relaxed">
+                I would confidently recommend Noel for any senior software engineer role. He brings solid
+                technical skills, strong communication, and a dependable work ethic to any team.
+            </p>
+
+            <button onclick="closeDialog('stefan-walke-dialog')"
+                    class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono float-right">
+                Close ✕
+            </button>
+        </div>
+    </div>
+
+    <!-- Richards Dialog -->
+    <div id="richards-saji-dialog"
+         class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden slide-in-right">
+        <div class="bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
+            <div class="w-full">
+                <h3 class="text-2xl font-bold mb-1 text-white">Richards Saji</h3>
+                <div class="text-orange-500 font-mono text-sm mb-0">QA Lead</div>
+                <div class="text-fuchsia-400 font-mono text-sm mb-2">Actindo AG</div>
+            </div>
+            <p class="text-gray-400 mb-4 leading-relaxed">
+                I had the opportunity to work with Noel, a dependable and collaborative Senior Backend Engineer,
+                during our work on the Nintendo project at Actindo, including the major Payment Gateway
+                migration initiative.
+            </p>
+
+            <p class="text-gray-400 mb-4 leading-relaxed">
+                Noel is the kind of engineer every QA wishes to work with. His documentation is clear,
+                thoughtful, and genuinely helpful, making it effortless to understand the flow, impacts, and
+                expectations of each feature. He consistently provided meaningful implementation notes and
+                straightforward testing guidance that saved time, eliminated confusion, and made the entire QA
+                process faster and more reliable.
+            </p>
+            <p class="text-gray-400 mb-4 leading-relaxed">
+                One thing that genuinely stood out: his tickets were always a pleasure to test. They were
+                well-prepared, stable, and often passed on the first run. That level of quality doesn’t happen
+                by accident—it reflects his strong discipline, careful thinking, and commitment to doing things
+                right.
+            </p>
+            <p class="text-gray-400 mb-4 leading-relaxed">
+                Beyond the technical side, Noel is proactive, calm under pressure, and always ready to support
+                the team. From day one, he brought steady contribution, ownership, and maturity to the project.
+                His communication is direct and effective, and working with him feels smooth, productive, and
+                truly collaborative.
+            </p>
+            <p class="text-gray-400 mb-4 leading-relaxed">
+                Noel is not just a strong backend engineer—he’s a team player who elevates everyone around him.
+                Any team would be lucky to have him, and I highly recommend him without hesitation.
+            </p>
+
+            <button onclick="closeDialog('richards-saji-dialog')"
+                    class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono float-right">
+                Close ✕
+            </button>
+        </div>
+    </div>
+
+    <!-- Mike Rockett -->
+    <div id="mike-rockett-dialog"
+         class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden slide-in-right">
+        <div class="bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
+            <div class="w-full">
+                <h3 class="text-2xl font-bold mb-1 text-white">Mike Rockétt</h3>
+                <div class="text-orange-500 font-mono text-sm mb-0">Lead Software Developer</div>
+                <div class="text-fuchsia-400 font-mono text-sm mb-2">Megafreight Services</div>
+            </div>
+            <p class="text-gray-400 mb-4 leading-relaxed">
+                Noel and I worked together for nearly two years, building features to replace a legacy exports
+                forwarding system that was being shut down. While I focused on operational functions, Noel
+                concentrated on the financial side, from invoicing, to financial-system integrations, to
+                approvals and reporting. We worked closely to ensure everything came together seamlessly, and I
+                was impressed by the meticulous thought he put into both understanding problems and crafting
+                their solutions. His work was excellent, and he developed valuable expertise and knowledge in
+                freight forwarding – an industry that anyone seasoned enough will tell you is far from
+                straightforward – as well as financial business functions more broadly.
+            </p>
+            <p class="text-gray-400 mb-4 leading-relaxed">
+                Noel is an excellent backend engineer, and any team would be lucky to have him.
+            </p>
+
+            <button onclick="closeDialog('mike-rockett-dialog')"
+                    class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono float-right">
+                Close ✕
+            </button>
+        </div>
+    </div>
+
+    <!-- Stefan Muller Dialog -->
+    <div id="stefan-muller-dialog"
+         class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden slide-in-left">
+        <div class="bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
+            <div class="w-full">
+                <h3 class="text-2xl font-bold mb-1 text-white">Stefan Müller</h3>
+                <div class="text-orange-500 font-mono text-sm mb-0">Senior Account Director</div>
+                <div class="text-fuchsia-400 font-mono text-sm mb-2">Thinkproject</div>
+            </div>
+            <p class="text-gray-400 mb-4 leading-relaxed">
+                I’ve had the privilege of knowing Noel for many years, and in that time he has consistently
+                impressed me with his extraordinary intelligence, discipline, and integrity. Noel is one of the
+                most meticulous and calculated individuals I’ve ever met. He approaches every challenge with a
+                level of thoughtfulness and precision that is rare, and it’s no surprise that he is a member of
+                Mensa. His analytical ability and problem-solving skills are truly exceptional.
+            </p>
+            <p class="text-gray-400 mb-4 leading-relaxed">
+                Beyond his intellectual strengths, Noel possesses an extraordinary capacity for self-discipline.
+                Having completed numerous ultramarathons, he has repeatedly demonstrated a level of commitment,
+                resilience, and mental toughness that few people ever develop. Whether he is pursuing personal
+                goals or taking on professional responsibilities, Noel approaches everything with the same
+                relentless determination to achieve excellence.
+            </p>
+            <p class="text-gray-400 mb-4 leading-relaxed">
+                Any organisation would be fortunate to have someone of Noel’s calibre. He brings intelligence,
+                focus, reliability, and a deep sense of purpose to everything he does. I consider myself
+                fortunate to call him a long-time friend, and I wholeheartedly recommend him.
+            </p>
+
+            <button onclick="closeDialog('stefan-muller-dialog')"
+                    class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono float-right">
+                Close ✕
+            </button>
+        </div>
+    </div>
+
+    <!-- Lourens dialog -->
+    <div id="lourens-nortje-dialog"
+         class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden slide-in-left">
+        <div class="bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
+            <div class="w-full">
+                <h3 class="text-2xl font-bold mb-1 text-white">Lourens Nortje</h3>
+                <div class="text-orange-500 font-mono text-sm mb-0">Managing Director</div>
+                <div class="text-fuchsia-400 font-mono text-sm mb-2">Starbright Solutions</div>
+            </div>
+            <p class="text-gray-400 mb-4 leading-relaxed">
+                I had the pleasure of working with Noel as a PHP developer at our company from 2011 to 2014. He
+                started with no PHP knowledge, but he put in the work to learn it thoroughly. In just a short
+                time, he turned into a reliable PHP developer, handling all the skills you'd expect from someone
+                with years on the job.
+            </p>
+            <p class="text-gray-400 mb-4 leading-relaxed">
+                Noel always stepped up, taking charge and owning every task we gave him. He played a key part in
+                building our development process, creating benchmarks for developers and designing assessments
+                for new hires. He showed real leadership and drive throughout.
+            </p>
+            <p class="text-gray-400 mb-4 leading-relaxed">
+                On top of that, Noel kept pushing himself by studying while holding down his full-time role.
+                If I had the chance to hire him again? Absolutely, without a doubt.
+            </p>
+
+            <button onclick="closeDialog('lourens-nortje-dialog')"
+                    class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono float-right">
+                Close ✕
+            </button>
+        </div>
+    </div>
+
+    <!-- Alain dialog -->
+    <div id="alain-jacquet-dialog"
+         class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden slide-in-right">
+        <div class="bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
+            <div class="w-full">
+                <h3 class="text-2xl font-bold mb-1 text-white">Alain Jacquet</h3>
+                <div class="text-orange-500 font-mono text-sm mb-0">Managing Director</div>
+                <div class="text-fuchsia-400 font-mono text-sm mb-2">SABEeX</div>
+            </div>
+            <p class="text-gray-400 mb-4 leading-relaxed">
+                When I began development of the SABEeX Delivery Management System, I engaged Noel Young as an energetic and skilled developer. During his time with SABEeX, he built the original platform that is today one of the world's leading Online Procurement Platforms. His insight into the architecture design and robust construction helped to establish a legacy.
+                He went on to build services other world-renowned platforms.
+            </p>
+            <p class="text-gray-400 mb-4 leading-relaxed">
+                He's a legend!
+            </p>
+
+            <button onclick="closeDialog('alain-jacquet-dialog')"
+                    class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono float-right">
+                Close ✕
+            </button>
+        </div>
+    </div>
+
     <script>
         // Scroll animation observer
         const observerOptions = {
@@ -796,7 +1011,7 @@
         }, observerOptions);
 
         // Observe all animated elements
-        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in').forEach(el => {
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in, .stack-layer').forEach(el => {
             observer.observe(el);
         });
 
@@ -876,12 +1091,12 @@
         });
 
         // dialog
-        function openDialog() {
-            document.getElementById("testimonial-dialog").classList.remove("hidden");
+        function openDialog(id) {
+            document.getElementById(id).classList.remove("hidden");
         }
 
-        function closeDialog() {
-            document.getElementById("testimonial-dialog").classList.add("hidden");
+        function closeDialog(id) {
+            document.getElementById(id).classList.add("hidden");
         }
     </script>
 
