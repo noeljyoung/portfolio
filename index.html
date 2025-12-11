@@ -6,12 +6,12 @@
     <title>Noel Young - Software Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rock+Salt&display=swap');
-        
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
         @font-face {
             font-family: 'Departure Mono';
             src: url('DepartureMono-Regular.woff2') format('woff2'),
-                 url('DepartureMono-Regular.woff') format('woff');
+            url('DepartureMono-Regular.woff') format('woff');
             font-weight: 400;
             font-style: normal;
             font-display: swap;
@@ -21,67 +21,64 @@
             font-family: 'Departure Mono' !important;
         }
 
-        .font-rock-salt {
-            font-family: 'Rock Salt', cursive;
-        }
-
-        .font-cedarville {
-            font-family: "Cedarville Cursive", cursive;
+        .font-merriweather {
+            font-family: "Merriweather", serif;
+            font-optical-sizing: auto;
         }
 
         * {
             font-family: Inter, sans-serif;
         }
-        
+
         body {
             background: #0a0a0a;
             overflow-x: hidden;
         }
-        
+
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
-        
+
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         .slide-in-left {
             opacity: 0;
             transform: translateX(-50px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
-        
+
         .slide-in-left.visible {
             opacity: 1;
             transform: translateX(0);
         }
-        
+
         .slide-in-right {
             opacity: 0;
             transform: translateX(50px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
-        
+
         .slide-in-right.visible {
             opacity: 1;
             transform: translateX(0);
         }
-        
+
         .scale-in {
             opacity: 0;
             transform: scale(0.9);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
-        
+
         .scale-in.visible {
             opacity: 1;
             transform: scale(1);
         }
-        
+
         .gradient-text {
             /* background: linear-gradient(135deg, #ff6b35 0%, #10b981 100%); */
             background: linear-gradient(135deg, #ffa535 0%, #c301c6 100%);
@@ -89,13 +86,13 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .gradient-border {
             position: relative;
             background: #1a1a1a;
             border-radius: 0.5rem;
         }
-        
+
         .gradient-border::before {
             content: '';
             position: absolute;
@@ -107,33 +104,33 @@
             -webkit-mask-composite: xor;
             mask-composite: exclude;
         }
-        
+
         .tech-badge {
             transition: all 0.3s ease;
         }
-        
+
         .tech-badge:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
         }
-        
+
         .project-card {
             transition: all 0.3s ease;
             background: #1a1a1a;
             border: 1px solid #2a2a2a;
         }
-        
+
         .project-card:hover {
             border-color: #ff6b35;
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(255, 107, 53, 0.2);
         }
-        
+
         .nav-link {
             position: relative;
             transition: color 0.3s ease;
         }
-        
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -144,11 +141,11 @@
             background: linear-gradient(90deg, #ff6b35, #c301c6);
             transition: width 0.3s ease;
         }
-        
+
         .nav-link:hover::after {
             width: 100%;
         }
-        
+
         .typing-animation {
             overflow: hidden;
             border-right: 2px solid #ff6b35;
@@ -183,11 +180,10 @@
             transition-delay: var(--delay);
             opacity: 0;
             transform: translateY(-30px) scale(0.95);
-            box-shadow:
-                    0 10px 20px rgba(0, 0, 0, 0.3),
-                    0 6px 6px rgba(0, 0, 0, 0.2),
-                    inset 0 -2px 4px rgba(0, 0, 0, 0.3),
-                    inset 0 2px 4px rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3),
+            0 6px 6px rgba(0, 0, 0, 0.2),
+            inset 0 -2px 4px rgba(0, 0, 0, 0.3),
+            inset 0 2px 4px rgba(255, 255, 255, 0.05);
         }
 
         .stack-layer.visible {
@@ -200,11 +196,25 @@
             z-index: 6;
         }
 
-        .stack-layer:nth-child(2) { z-index: 5; }
-        .stack-layer:nth-child(3) { z-index: 4; }
-        .stack-layer:nth-child(4) { z-index: 3; }
-        .stack-layer:nth-child(5) { z-index: 2; }
-        .stack-layer:nth-child(6) { z-index: 1; }
+        .stack-layer:nth-child(2) {
+            z-index: 5;
+        }
+
+        .stack-layer:nth-child(3) {
+            z-index: 4;
+        }
+
+        .stack-layer:nth-child(4) {
+            z-index: 3;
+        }
+
+        .stack-layer:nth-child(5) {
+            z-index: 2;
+        }
+
+        .stack-layer:nth-child(6) {
+            z-index: 1;
+        }
 
         .stack-layer::before {
             content: '';
@@ -220,11 +230,10 @@
         .stack-layer:hover {
             transform: translateY(-15px) scale(1.05) rotateX(5deg);
             border-color: transparent;
-            box-shadow:
-                    0 20px 40px rgba(255, 107, 53, 0.4),
-                    0 10px 20px rgba(16, 185, 129, 0.2),
-                    inset 0 -2px 8px rgba(0, 0, 0, 0.4),
-                    inset 0 2px 8px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.4),
+            0 10px 20px rgba(16, 185, 129, 0.2),
+            inset 0 -2px 8px rgba(0, 0, 0, 0.4),
+            inset 0 2px 8px rgba(255, 255, 255, 0.1);
             z-index: 10 !important;
         }
 
@@ -261,19 +270,26 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(255, 107, 53, 0.2);
         }
-        
+
         @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
+            from {
+                width: 0
+            }
+            to {
+                width: 100%
+            }
         }
-        
+
         @keyframes blink {
-            50% { border-color: transparent; }
+            50% {
+                border-color: transparent;
+            }
         }
-        
+
         .glow {
             text-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
         }
+
         .typewriter {
             position: relative;
         }
@@ -291,500 +307,483 @@
         }
 
         @keyframes blink {
-            0%, 50% { opacity: 1; }
-            50%, 100% { opacity: 0; }
+            0%, 50% {
+                opacity: 1;
+            }
+            50%, 100% {
+                opacity: 0;
+            }
         }
-
 
 
     </style>
 </head>
 <body class="text-gray-100">
-    <!-- Navigation -->
-    <nav 
-        aria-hidden="true" 
+<!-- Navigation -->
+<nav
+        aria-hidden="true"
         class="hidden md:block fixed top-0 w-full bg-black bg-opacity-90 backdrop-blur-sm z-50 border-b border-gray-800">
-        <div class="max-w-6xl mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <div class="text-xl font-bold font-mono">
-                    <span class="text-orange-500">&lt;</span>
-                    <span class="gradient-text">NY</span>
-                    <span class="text-orange-500">/&gt;</span>
-                </div>
-                <div class="flex gap-8">
-                    <a href="#about" class="nav-link text-gray-300 hover:text-orange-500">About</a>
-                    <a href="#projects" class="nav-link text-gray-300 hover:text-orange-500">Projects</a>
-                    <a href="#skills" class="nav-link text-gray-300 hover:text-orange-500">Skills</a>
-                    <a href="#recommendations" class="nav-link text-gray-300 hover:text-orange-500">Recommendations</a>
-                    <a href="#contact" class="nav-link text-gray-300 hover:text-orange-500">Contact</a>
-                </div>
+    <div class="max-w-6xl mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+            <div class="text-xl font-bold font-mono">
+                <span class="text-orange-500">&lt;</span>
+                <span class="gradient-text">NY</span>
+                <span class="text-orange-500">/&gt;</span>
+            </div>
+            <div class="flex gap-8">
+                <a href="#about" class="nav-link text-gray-300 hover:text-orange-500">About</a>
+                <a href="#projects" class="nav-link text-gray-300 hover:text-orange-500">Projects</a>
+                <a href="#skills" class="nav-link text-gray-300 hover:text-orange-500">Skills</a>
+                <a href="#recommendations" class="nav-link text-gray-300 hover:text-orange-500">Recommendations</a>
+                <a href="#contact" class="nav-link text-gray-300 hover:text-orange-500">Contact</a>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center px-6 pt-20">
-        <div class="max-w-5xl mx-auto">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div>
-                    <!-- Profile Image -->
-                    <div class="fade-in flex-shrink-0">
-                        <div class="relative group">
-                            <div class="absolute -inset-1 bg-gradient-to-r from-orange-500 to-fuchsia-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
-                            <img src="profile.jpg" alt="Noel Young" class="relative w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-gray-900">
-                        </div>
-                    </div>
-                    <div class="w-full">
-                        <div class="text-3xl md:text-4xl text-gray-200 text-center mt-8 mb-4 font-bold">Noel Young</div>
-                        <div class="w-72 m-auto text-center">
-                            <span class="px-4 py-2 text-xs text-fuchsia-500">Problem Solving</span>
-                            <span class="px-4 py-2 text-xs text-orange-500">Communication</span>
-                            <span class="px-4 py-2 text-xs text-orange-600">Ownership</span>
-                            <span class="px-4 py-2 text-xs text-fuchsia-500">Leadership</span>
-                            <span class="px-4 py-2 text-xs text-fuchsia-600">Discipline</span>
-                            <span class="px-4 py-2 text-xs text-orange-600">Pragmatic</span>
-                            <span class="px-4 py-2 text-xs text-orange-600">Collaboration</span>
-                        </div>
+<!-- Hero Section -->
+<section class="min-h-screen flex items-center justify-center px-6 pt-20">
+    <div class="max-w-5xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <div>
+                <!-- Profile Image -->
+                <div class="fade-in flex-shrink-0">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-orange-500 to-fuchsia-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+                        <img src="profile.jpg" alt="Noel Young"
+                             class="relative w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-gray-900">
                     </div>
                 </div>
+                <div class="w-full">
+                    <div class="text-3xl md:text-4xl text-gray-200 text-center mt-8 mb-4 font-bold">Noel Young</div>
+                    <div class="grid grid-cols-2 gap-0 w-72 m-auto text-center">
+                        <span class="px-4 py-2 text-xs text-fuchsia-500">Problem Solver</span>
+                        <span class="px-4 py-2 text-xs text-orange-500">Good Communicator</span>
+                        <span class="px-4 py-2 text-xs text-orange-600">Takes Ownership</span>
+                        <span class="px-4 py-2 text-xs text-fuchsia-500">Shows Leadership</span>
+                        <span class="px-4 py-2 text-xs text-fuchsia-600">Disciplined</span>
+                        <span class="px-4 py-2 text-xs text-orange-600">Pragmatic</span>
+                    </div>
+                </div>
+            </div>
 
-                <!-- Hero Content -->
-                <div class="fade-in text-center md:text-left">
-                    <div class="text-gray-600 mb-4 font-mono">Welcome to my portfolio!</div>
-                    <h1 class="text-5xl md:text-7xl font-bold mb-6">
+            <!-- Hero Content -->
+            <div class="fade-in text-center md:text-left">
+                <div class="text-gray-600 mb-4 font-mono">Welcome to my portfolio!</div>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">
                         <span class="text-white">
                             <span class="font-mono block text-3xl gradient-text">"Get-it-done"</span> Software Engineer</span>
-                    </h1>
-                    <div class="flex gap-4 justify-center md:justify-start mb-12 flex-wrap">
+                </h1>
+                <div class="flex gap-4 justify-center md:justify-start mb-12 flex-wrap">
                         <span class="font-mono px-4 py-2 bg-orange-500 bg-opacity-10 text-orange-500 rounded-lg border border-orange-500 border-opacity-30 w-150">
                             Full-Stack Specialist
                         </span>
-                        <div class="px-4 py-2 pr-0 mr-4 w-72 bg-fuchsia-500 bg-opacity-10 text-fuchsia-500 rounded-lg border border-fuchsia-500 border-opacity-30">
+                    <div class="px-4 py-2 pr-0 mr-4 w-72 bg-fuchsia-500 bg-opacity-10 text-fuchsia-500 rounded-lg border border-fuchsia-500 border-opacity-30">
                         <span
                                 id="role-badge"
                                 class="typewriter font-mono"
                         ></span>
-                        </div>
+                    </div>
 
+                </div>
+                <div class="flex gap-4 justify-center md:justify-start mb-12 flex-wrap">
+                    <div class="is-uppercase p-0">
+                        <p class="text-5xl md:text-7xl font-bold text-fuchsia-400">+14</p>
+                        <span>Years of experience</span>
                     </div>
-                    <div class="flex gap-4 justify-center md:justify-start mb-12 flex-wrap">
-                        <div class="is-uppercase p-0">
-                            <p class="text-5xl md:text-7xl font-bold text-fuchsia-400">+14</p>
-                            <span>Years of experience</span>
-                        </div>
-                    </div>
-                    <a href="#about" class="inline-block px-8 py-3 bg-gradient-to-r from-orange-500 to-fuchsia-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-orange-500/50 transition-all duration-300 transform hover:scale-105">
+                </div>
+                <div class="flex gap-4 justify-center md:justify-start mb-12 flex-wrap">
+                    <a href="#about"
+                       class="px-8 py-3 bg-gradient-to-r from-orange-500 to-fuchsia-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-orange-500/50 transition-all duration-300 transform hover:scale-105">
                         View My Work
+                    </a>
+                    <a href="resume.pdf" download="Noel_Young_Resume.pdf"
+                       class="flex items-center px-8 py-3 text-white box-border border border-default-medium  font-semibold rounded-full hover:shadow-lg hover:shadow-orange-500/50 transition-all duration-300 transform hover:scale-105">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                        Resume
                     </a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 px-6">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold mb-12 text-center fade-in">
-                <span class="text-orange-500 font-mono"></span> About Me
-            </h2>
+<!-- About Section -->
+<section id="about" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 text-center fade-in">
+            <span class="text-orange-500 font-mono"></span> About Me
+        </h2>
 
-            <div class="gradient-border p-8 fade-in">
-                <p class="text-gray-300 leading-relaxed text-lg">
-                    Dynamic, self-taught Full-Stack Software Developer with <span class="text-orange-500 font-semibold">14 years of experience</span>
-                    delivering robust, scalable systems across industries including e-commerce, telecommunications,
-                    logistics, and digital services.
-                </p>
-                <p class="text-gray-300 leading-relaxed text-lg mt-6">
-                    Skilled in PHP, Laravel, modern JavaScript frameworks, relational
-                    databases, and distributed architectures, with a track record of improving system performance,
-                    reliability, and developer workflows.
-                </p>
-                <p class="text-gray-300 leading-relaxed text-lg mt-6">
-                    Known for leading projects end-to-end, collaborating effectively with stakeholders, and mentoring
-                    teams to achieve high-quality engineering outcomes.
-                </p>
-                <p class="text-gray-300 leading-relaxed text-lg mt-6">
-                    Driven by continuous learning, optimisation, and
-                    clean software design, and ready to contribute deep technical expertise and practical
-                    problem-solving to a forward-thinking organization.
-                </p>
-            </div>
+        <div class="gradient-border p-8 fade-in">
+            <p class="text-gray-300 leading-relaxed text-lg">
+                Dynamic, self-taught Full-Stack Software Developer with <span class="text-orange-500 font-semibold">14 years of experience</span>
+                delivering robust, scalable systems across industries including e-commerce, telecommunications,
+                logistics, and digital services.
+            </p>
+            <p class="text-gray-300 leading-relaxed text-lg mt-6">
+                Skilled in PHP, Laravel, modern JavaScript frameworks, relational
+                databases, and distributed architectures, with a track record of improving system performance,
+                reliability, and developer workflows.
+            </p>
+            <p class="text-gray-300 leading-relaxed text-lg mt-6">
+                Known for leading projects end-to-end, collaborating effectively with stakeholders, and mentoring
+                teams to achieve high-quality engineering outcomes.
+            </p>
+            <p class="text-gray-300 leading-relaxed text-lg mt-6">
+                Driven by continuous learning, optimisation, and
+                clean software design, and ready to contribute deep technical expertise and practical
+                problem-solving to a forward-thinking organization.
+            </p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 px-6">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold mb-12 text-center fade-in">Notable Projects</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Projects Section -->
+<section id="projects" class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 text-center fade-in">Notable Projects</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <!-- Project 1 -->
-                <div class="project-card rounded-lg p-6 scale-in h-48 overflow-hidden relative">
-                    <h3 class="text-xl font-bold text-white mb-1">Asterisk VoIP Switchboard</h3>
-                    <div class="text-orange-500 font-mono text-sm">Switch Telecom</div>
+            <!-- Project 1 - Nintendo -->
+            <div class="project-card rounded-lg p-6 scale-in overflow-hidden relative">
+                <h3 class="text-xl font-bold text-white mb-1">Nintendo Payment Gateway</h3>
+                <div class="text-orange-500 font-mono text-sm">Actindo AG</div>
 
-                    <p class="text-gray-400 mt-2 text-sm line-clamp-3">
-                        I had the opportunity to work with Noel for over two years…
-                    </p>
+                <p class="text-gray-400 mt-2 text-sm line-clamp-3">
+                    Nintendo was one of our larger customers, and they had made the decision to move from the Adyen
+                    payment gateway to their own in-house solution. This required integrating a complex payment process
+                    into an already established business workflow. It was a challenging piece of work with many
+                    dependencies.
+                </p>
 
-                    <button onclick="openDialog('asterisk-voip-dialog')"
-                            class="absolute bottom-4 right-4 text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
-                        View full →
-                    </button>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card rounded-lg p-6 scale-in h-52 overflow-hidden relative">
-                    <h3 class="text-xl font-bold text-white mb-1">Nintendo Payment Gateway</h3>
-                    <div class="text-orange-500 font-mono text-sm">Actindo AG</div>
-
-                    <p class="text-gray-400 mt-2 text-sm line-clamp-3">
-                        I had the opportunity to work with Noel for over two years…
-                    </p>
-
-                    <div class="flex flex-wrap gap-2 mb-4 mt-4">
-                        <span class="text-xs px-2 py-1 bg-orange-500 bg-opacity-20 text-orange-500 rounded font-mono">PHP</span>
-                        <span class="text-xs px-2 py-1 bg-fuchsia-500 bg-opacity-20 text-fuchsia-500 rounded font-mono">Polymer</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 text-gray-300 rounded font-mono">MySQL</span>
-                    </div>
-
-                    <button onclick="openDialog('nintendo-payment-gateway-dialog')"
-                            class="absolute bottom-4 right-4 text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
-                        View full →
-                    </button>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card rounded-lg p-6 scale-in h-48 overflow-hidden relative">
-                    <h3 class="text-xl font-bold text-white mb-1">New Car Aggregator</h3>
-                    <div class="text-orange-500 font-mono text-sm">Nift</div>
-
-                    <p class="text-gray-400 mt-2 text-sm line-clamp-3">
-                        I had the opportunity to work with Noel for over two years…
-                    </p>
-
-                    <button onclick="openDialog()"
-                            class="absolute bottom-4 right-4 text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
-                        View full →
-                    </button>
-                </div>
+                <button onclick="openDialog('nintendo-payment-gateway-dialog')"
+                        class="absolute bottom-4 right-4 text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
+                    View full →
+                </button>
             </div>
-        </div>
-        <div id="asterisk-voip-dialog"
-             class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden">
-            <div class="bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
-                <h3 class="text-2xl font-bold mb-2 text-white">Asterisk Voip</h3>
 
-                <p class="text-gray-300 mb-4 leading-relaxed">
-                    I had the opportunity to work with Noel for over two years, during which …
-                </p>
-                <p class="text-gray-300 mb-4 leading-relaxed">
-                    One of his most impactful contributions was integrating…
-                </p>
-                <p class="text-gray-300 mb-4 leading-relaxed">
-                    I would confidently recommend Noel for any senior software engineer role…
+            <!-- Project 2 - Asterisk Voip -->
+            <div class="project-card rounded-lg p-6 scale-in h-48 overflow-hidden relative">
+                <h3 class="text-xl font-bold text-white mb-1">Hosted VoIP Switchboard</h3>
+                <div class="text-orange-500 font-mono text-sm">Switch Telecom</div>
+
+                <p class="text-gray-400 mt-2 text-sm line-clamp-3">
+                    Designed and developed a fully operational VoIP switchboard solution using the Asterisk platform,
+                    integrating a custom front-end...
                 </p>
 
-                <button onclick="closeDialog('asterisk-voip-dialog')"
-                        class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono">
-                    Close ✕
+                <button onclick="openDialog('asterisk-VoIP-dialog')"
+                        class="absolute bottom-4 right-4 text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
+                    View full →
+                </button>
+            </div>
+
+            <!-- Project 3 - Nift -->
+            <div class="project-card rounded-lg p-6 scale-in h-48 overflow-hidden relative">
+                <h3 class="text-xl font-bold text-white mb-1">New Car Aggregator</h3>
+                <div class="text-orange-500 font-mono text-sm">Nift</div>
+
+                <p class="text-gray-400 mt-2 text-sm line-clamp-3">
+                    Founded and developed a New car aggregation website with a friend of mine. The site helped a new car
+                    buyer...
+                </p>
+
+                <button onclick="openDialog('nift-dialog')"
+                        class="absolute bottom-4 right-4 text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
+                    View full →
                 </button>
             </div>
         </div>
-        <div id="nintendo-payment-gateway-dialog"
-             class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden">
-            <div class="bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
-                <h3 class="text-2xl font-bold mb-2 text-white">Nintendo Payment Gateway</h3>
+    </div>
+</section>
 
-                <p class="text-gray-300 mb-4 leading-relaxed">
-                    I had the opportunity to work with Noel for over two years, during which …
-                </p>
-                <p class="text-gray-300 mb-4 leading-relaxed">
-                    One of his most impactful contributions was integrating…
-                </p>
-                <p class="text-gray-300 mb-4 leading-relaxed">
-                    I would confidently recommend Noel for any senior software engineer role…
-                </p>
-
-                <button onclick="closeDialog('nintendo-payment-gateway-dialog')"
-                        class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono">
-                    Close ✕
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 px-6 bg-black bg-opacity-50">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold mb-12 text-center fade-in">Skills</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Backend -->
-                <div class="slide-in-left">
-                    <h3 class="text-2xl font-semibold mb-6 text-gray-500 font-mono">Backend</h3>
-                    <div class="flex flex-wrap gap-3">
+<!-- Skills Section -->
+<section id="skills" class="py-20 px-6 bg-black bg-opacity-50">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 text-center fade-in">Skills</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Backend -->
+            <div class="slide-in-left">
+                <h3 class="text-2xl font-semibold mb-6 text-gray-500 font-mono">Backend</h3>
+                <div class="flex flex-wrap gap-3">
                         <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-indigo-500 bg-opacity-10 text-indigo-500 rounded-lg border border-indigo-500 border-opacity-30 font-mono">
                           <img src="https://cdn.simpleicons.org/php?viewbox=auto&size=20" alt="PHP" class="">
                         </span>
-                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-sky-500 bg-opacity-10 text-sky-500 rounded-lg border border-sky-500 border-opacity-30 font-mono">
+                    <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-sky-500 bg-opacity-10 text-sky-500 rounded-lg border border-sky-500 border-opacity-30 font-mono">
                           <img src="https://cdn.simpleicons.org/go?viewbox=auto&size=20" alt="Go" class="">
                         </span>
-                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-yellow-500 bg-opacity-10 text-yellow-500 rounded-lg border border-yellow-500 border-opacity-30 font-mono">
+                    <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-yellow-500 bg-opacity-10 text-yellow-500 rounded-lg border border-yellow-500 border-opacity-30 font-mono">
                           <img src="https://cdn.simpleicons.org/python?viewbox=auto&size=20" alt="Python" class=""> Python
                         </span>
-                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-red-500 bg-opacity-10 text-red-500 rounded-lg border border-red-500 border-opacity-30 font-mono">
+                    <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-red-500 bg-opacity-10 text-red-500 rounded-lg border border-red-500 border-opacity-30 font-mono">
                           <img src="https://cdn.simpleicons.org/laravel?viewbox=auto&size=20" alt="Laravel" class="">
                             Laravel
                         </span>
-                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-gray-100 bg-opacity-10 text-white rounded-lg border border-gray-500 border-opacity-30 font-mono">
+                    <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-gray-100 bg-opacity-10 text-white rounded-lg border border-gray-500 border-opacity-30 font-mono">
                           <img src="https://cdn.simpleicons.org/symfony?viewbox=auto&size=20" alt="Symfony" class="">
                             Symfony
                         </span>
-                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-orange-500 bg-opacity-10 text-orange-500 rounded-lg border border-orange-500 border-opacity-30 font-mono">
+                    <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-orange-500 bg-opacity-10 text-orange-500 rounded-lg border border-orange-500 border-opacity-30 font-mono">
                             <img src="https://cdn.simpleicons.org/mysql?viewbox=auto&size=20" alt="MySQL" class="">
                         </span>
-                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-blue-500 bg-opacity-10 text-blue-500 rounded-lg border border-blue-500 border-opacity-30 font-mono">
-                            <img src="https://cdn.simpleicons.org/postgresql?viewbox=auto&size=20" alt="PostgreSQL" class="">PostgreSQL
+                    <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-blue-500 bg-opacity-10 text-blue-500 rounded-lg border border-blue-500 border-opacity-30 font-mono">
+                            <img src="https://cdn.simpleicons.org/postgresql?viewbox=auto&size=20" alt="PostgreSQL"
+                                 class="">PostgreSQL
                         </span>
-                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-red-500 bg-opacity-10 text-red-500 rounded-lg border border-red-500 border-opacity-30 font-mono">
+                    <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-red-500 bg-opacity-10 text-red-500 rounded-lg border border-red-500 border-opacity-30 font-mono">
                             <img src="https://cdn.simpleicons.org/redis?viewbox=auto&size=20" alt="Redis" class="">Redis
                         </span>
-                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-orange-500 bg-opacity-10 text-orange-500 rounded-lg border border-orange-500 border-opacity-30 font-mono">
-                            <img src="https://cdn.simpleicons.org/rabbitmq?viewbox=auto&size=20" alt="Rabbit MQ" class="">Rabbit MQ
+                    <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-orange-500 bg-opacity-10 text-orange-500 rounded-lg border border-orange-500 border-opacity-30 font-mono">
+                            <img src="https://cdn.simpleicons.org/rabbitmq?viewbox=auto&size=20" alt="Rabbit MQ"
+                                 class="">Rabbit MQ
                         </span>
-                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-red-500 bg-opacity-10 text-red-500 rounded-lg border border-red-500 border-opacity-30 font-mono">
-                            <img src="https://cdn.simpleicons.org/codeigniter?viewbox=auto&size=20" alt="CodeIgniter" class="">CodeIgniter
+                    <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-red-500 bg-opacity-10 text-red-500 rounded-lg border border-red-500 border-opacity-30 font-mono">
+                            <img src="https://cdn.simpleicons.org/codeigniter?viewbox=auto&size=20" alt="CodeIgniter"
+                                 class="">CodeIgniter
                         </span>
-                    </div>
                 </div>
+            </div>
 
-                <!-- Frontend -->
-                <div class="slide-in-right">
-                    <h3 class="text-2xl font-semibold mb-6 text-gray-500 font-mono">Frontend</h3>
-                    <div class="flex flex-wrap gap-3">
+            <!-- Frontend -->
+            <div class="slide-in-right">
+                <h3 class="text-2xl font-semibold mb-6 text-gray-500 font-mono">Frontend</h3>
+                <div class="flex flex-wrap gap-3">
                         <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-green-500 bg-opacity-10 text-green-500 rounded-lg border border-green-500 border-opacity-30 font-mono">
                           <img src="https://cdn.simpleicons.org/vuedotjs?viewbox=auto&size=20" alt="VueJs" class="">VueJs
                         </span>
-                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-cyan-500 bg-opacity-10 text-cyan-500 rounded-lg border border-cyan-500 border-opacity-30 font-mono">
+                    <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-cyan-500 bg-opacity-10 text-cyan-500 rounded-lg border border-cyan-500 border-opacity-30 font-mono">
                           <img src="https://cdn.simpleicons.org/react?viewbox=auto&size=20" alt="React" class="">React
                         </span>
-                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-yellow-500 bg-opacity-10 text-yellow-500 rounded-lg border border-yellow-500 border-opacity-30 font-mono">
-                          <img src="https://cdn.simpleicons.org/javaScript?viewbox=auto&size=20" alt="JavaScript" class="">JavaScript
+                    <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-yellow-500 bg-opacity-10 text-yellow-500 rounded-lg border border-yellow-500 border-opacity-30 font-mono">
+                          <img src="https://cdn.simpleicons.org/javaScript?viewbox=auto&size=20" alt="JavaScript"
+                               class="">JavaScript
                         </span>
-                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-orange-500 bg-opacity-10 text-orange-500 rounded-lg border border-orange-500 border-opacity-30 font-mono">
+                    <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-orange-500 bg-opacity-10 text-orange-500 rounded-lg border border-orange-500 border-opacity-30 font-mono">
                           <img src="https://cdn.simpleicons.org/HTML5?viewbox=auto&size=20" alt="HTML5" class="">HTML5
                         </span>
-                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-fuchsia-500 bg-opacity-10 text-fuchsia-500 rounded-lg border border-fuchsia-500 border-opacity-30 font-mono">
+                    <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-fuchsia-500 bg-opacity-10 text-fuchsia-500 rounded-lg border border-fuchsia-500 border-opacity-30 font-mono">
                           <img src="https://cdn.simpleicons.org/css?viewbox=auto&size=20" alt="CSS" class="">CSS
                         </span>
-                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-sky-500 bg-opacity-10 text-sky-500 rounded-lg border border-sky-500 border-opacity-30 font-mono">
-                          <img src="https://cdn.simpleicons.org/TailwindCSS?viewbox=auto&size=20" alt="Tailwind CSS" class="">Tailwind CSS
+                    <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-sky-500 bg-opacity-10 text-sky-500 rounded-lg border border-sky-500 border-opacity-30 font-mono">
+                          <img src="https://cdn.simpleicons.org/TailwindCSS?viewbox=auto&size=20" alt="Tailwind CSS"
+                               class="">Tailwind CSS
                         </span>
-                    </div>
                 </div>
+            </div>
 
-                <!-- DevOps & Tools -->
-                <div class="slide-in-left">
-                    <h3 class="text-2xl font-semibold mb-6 text-gray-500 font-mono">DevOps & Tools</h3>
-                    <div class="flex flex-wrap gap-3">
+            <!-- DevOps & Tools -->
+            <div class="slide-in-left">
+                <h3 class="text-2xl font-semibold mb-6 text-gray-500 font-mono">DevOps & Tools</h3>
+                <div class="flex flex-wrap gap-3">
                         <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-sky-500 bg-opacity-10 text-sky-500 rounded-lg border border-sky-500 border-opacity-30 font-mono">
                           <img src="https://cdn.simpleicons.org/docker?viewbox=auto&size=20" alt="Docker" class="">Docker
                         </span>
-                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-red-500 bg-opacity-10 text-red-500 rounded-lg border border-red-500 border-opacity-30 font-mono">
+                    <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-red-500 bg-opacity-10 text-red-500 rounded-lg border border-red-500 border-opacity-30 font-mono">
                           <img src="https://cdn.simpleicons.org/Git?viewbox=auto&size=20" alt="Git" class="">Git
                         </span>
-                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-white-500 bg-opacity-10 text-white-500 rounded-lg border border-white-500 border-opacity-30 font-mono">
-                          <img src="https://cdn.simpleicons.org/gitextensions?viewbox=auto&size=20" alt="CI/CD" class="">CI/CD
+                    <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-white-500 bg-opacity-10 text-white-500 rounded-lg border border-white-500 border-opacity-30 font-mono">
+                          <img src="https://cdn.simpleicons.org/gitextensions?viewbox=auto&size=20" alt="CI/CD"
+                               class="">CI/CD
                         </span>
-                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-orange-500 bg-opacity-10 text-orange-500 rounded-lg border border-orange-500 border-opacity-30 font-mono">
+                    <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-orange-500 bg-opacity-10 text-orange-500 rounded-lg border border-orange-500 border-opacity-30 font-mono">
                           <img src="https://cdn.simpleicons.org/Asterisk?viewbox=auto&size=20" alt="Asterisk" class="">Asterisk
                         </span>
-                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-black-500 bg-opacity-10 text-black-500 rounded-lg border border-black-500 border-opacity-30 font-mono">
+                    <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-black-500 bg-opacity-10 text-black-500 rounded-lg border border-black-500 border-opacity-30 font-mono">
                           <img src="https://cdn.simpleicons.org/Linux?viewbox=auto&size=20" alt="Linux" class="">Linux
                         </span>
-                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-yellow-500 bg-opacity-10 text-yellow-500 rounded-lg border border-yellow-500 border-opacity-30 font-mono">
+                    <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-yellow-500 bg-opacity-10 text-yellow-500 rounded-lg border border-yellow-500 border-opacity-30 font-mono">
                           <img src="https://cdn.simpleicons.org/doctrine?viewbox=auto&size=20" alt="Doctrine" class="">Doctrine
                         </span>
-                        <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-gray-500 bg-opacity-10 text-gray-500 rounded-lg border border-gray-500 border-opacity-30 font-mono">
-                          <img src="https://cdn.simpleicons.org/readthedocs?viewbox=auto&size=20" alt="Doctrine" class="">Documentation
+                    <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-gray-500 bg-opacity-10 text-gray-500 rounded-lg border border-gray-500 border-opacity-30 font-mono">
+                          <img src="https://cdn.simpleicons.org/readthedocs?viewbox=auto&size=20" alt="Doctrine"
+                               class="">Documentation
                         </span>
-                    </div>
                 </div>
+            </div>
 
-                <!-- Architecture -->
-                <div class="slide-in-right">
-                    <h3 class="text-2xl font-semibold mb-6 text-gray-500 font-mono">Architecture & Patterns</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">Microservices</span>
-                        <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">Event-Driven</span>
-                        <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">RESTful Design</span>
-                        <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">SOLID Principles</span>
-                        <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">TDD</span>
-                        <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">Data Structures</span>
-                    </div>
+            <!-- Architecture -->
+            <div class="slide-in-right">
+                <h3 class="text-2xl font-semibold mb-6 text-gray-500 font-mono">Architecture & Patterns</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">Microservices</span>
+                    <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">Event-Driven</span>
+                    <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">RESTful Design</span>
+                    <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">SOLID Principles</span>
+                    <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">TDD</span>
+                    <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">Data Structures</span>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Recommendations Section -->
-    <section id="recommendations" class="py-20 px-6">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold mb-12 text-center fade-in">Recommendations</h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project Card 1 - Stefan Walke -->
-                <div class="project-card rounded-lg p-6 scale-in">
-                    <div class="w-full">
-                        <h3 class="text-2xl font-bold mb-1 text-white">Stefan Walke</h3>
-                        <div class="text-orange-500 font-mono text-sm mb-0">Engineering Manager @ Actindo AG</div>
-                        <div class="text-fuchsia-400 font-mono text-sm mb-2">Actindo AG</div>
-                    </div>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
-                        I had the opportunity to work with Noel for over two years, during which he consistently proved
-                        himself to be a highly reliable and capable software engineer. Beyond his strong technical
-                        foundation, what stood out most was his sense of ownership...
+<!-- Recommendations Section -->
+<section id="recommendations" class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 text-center fade-in">Recommendations</h2>
 
-                    </p>
-                    <button onclick="openDialog('stefan-walke-dialog')"
-                            class="text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
-                        View full →
-                    </button>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project Card 1 - Stefan Walke -->
+            <div class="project-card rounded-lg p-6 scale-in">
+                <div class="w-full">
+                    <h3 class="text-2xl font-bold mb-1 text-white">Stefan Walke</h3>
+                    <div class="text-orange-500 font-mono text-sm mb-0">Engineering Manager @ Actindo AG</div>
+                    <div class="text-fuchsia-400 font-mono text-sm mb-2">Actindo AG</div>
                 </div>
+                <p class="text-gray-400 mb-4 leading-relaxed">
+                    I had the opportunity to work with Noel for over two years, during which he consistently proved
+                    himself to be a highly reliable and capable software engineer. Beyond his strong technical
+                    foundation, what stood out most was his sense of ownership...
 
-                <!-- Project Card 2  - Richards-->
-                <div class="project-card rounded-lg p-6 scale-in" style="transition-delay: 0.1s;">
-                    <div class="w-full">
-                        <h3 class="text-2xl font-bold mb-1 text-white">Richards Saji</h3>
-                        <div class="text-orange-500 font-mono text-sm mb-0">QA Lead</div>
-                        <div class="text-fuchsia-400 font-mono text-sm mb-2">Actindo AG</div>
-                    </div>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
-                        I had the opportunity to work with Noel, a dependable and collaborative Senior Backend Engineer,
-                        during our work on the Nintendo project at Actindo, including the major Payment Gateway
-                        migration initiative...
-                    </p>
-
-                    <button onclick="openDialog('richards-saji-dialog')"
-                            class="text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right float-right">
-                        View full →
-                    </button>
-                </div>
-
-                <!-- Project Card 3 - Mike -->
-                <div class="project-card rounded-lg p-6 scale-in" style="transition-delay: 0.1s;">
-                    <div class="w-full">
-                        <h3 class="text-2xl font-bold mb-1 text-white">Mike Rockétt</h3>
-                        <div class="text-orange-500 font-mono text-sm mb-0">Lead Software Developer</div>
-                        <div class="text-fuchsia-400 font-mono text-sm mb-2">Megafreight Services</div>
-                    </div>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
-                        Noel is an excellent backend engineer, and any team would be lucky to have him...
-                    </p>
-                    <button onclick="openDialog('mike-rockett-dialog')"
-                            class="text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
-                        View full →
-                    </button>
-                </div>
-
-                <!-- Project Card 4 - Stefan Muller -->
-                <div class="project-card rounded-lg p-6 scale-in" style="transition-delay: 0.1s;">
-                    <div class="w-full">
-                        <h3 class="text-2xl font-bold mb-1 text-white">Stefan Müller</h3>
-                        <div class="text-orange-500 font-mono text-sm mb-0">Senior Account Director</div>
-                        <div class="text-fuchsia-400 font-mono text-sm mb-2">Thinkproject</div>
-                    </div>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
-                        I’ve had the privilege of knowing Noel for many years, and in that time he has consistently
-                        impressed me with his extraordinary intelligence, discipline, and integrity. Noel is one of the
-                        most meticulous and calculated individuals I’ve ever met...
-                    </p>
-                    <button onclick="openDialog('stefan-muller-dialog')"
-                            class="text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
-                        View full →
-                    </button>
-                </div>
-
-                <!-- Project Card 5 - Lourens -->
-                <div class="project-card rounded-lg p-6 scale-in" style="transition-delay: 0.1s;">
-                    <div class="w-full">
-                        <h3 class="text-2xl font-bold mb-1 text-white">Lourens Nortje</h3>
-                        <div class="text-orange-500 font-mono text-sm mb-0">Managing Director</div>
-                        <div class="text-fuchsia-400 font-mono text-sm mb-2">Starbright Solutions</div>
-                    </div>
-
-                    <p class="text-gray-400 mb-4 leading-relaxed">
-                        On top of that, Noel kept pushing himself by studying while holding down his full-time role.
-                        If I had the chance to hire him again? Absolutely, without a doubt...
-                    </p>
-                    <button onclick="openDialog('lourens-nortje-dialog')"
-                            class="text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
-                        View full →
-                    </button>
-                </div>
-
-                <!-- Project Card 6 - Alain -->
-                <div class="project-card rounded-lg p-6 scale-in" style="transition-delay: 0.1s;">
-                    <div class="w-full">
-                        <h3 class="text-2xl font-bold mb-1 text-white">Alain Jacquet</h3>
-                        <div class="text-orange-500 font-mono text-sm mb-0">Managing Director</div>
-                        <div class="text-fuchsia-400 font-mono text-sm mb-2">SABEeX</div>
-                    </div>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
-                        He's a legend!
-                    </p>
-                    <button onclick="openDialog('alain-jacquet-dialog')"
-                            class="text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
-                        View full →
-                    </button>
-                </div>
-
+                </p>
+                <button onclick="openDialog('stefan-walke-dialog')"
+                        class="text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
+                    View full →
+                </button>
             </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 px-6 bg-black bg-opacity-50">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-8 fade-in">Get In Touch</h2>
-            <p class="text-gray-400 text-lg mb-12 fade-in">
-                I'm always open to discussing new projects, opportunities, or technical collaborations.
-            </p>
-            
-            <div class="flex justify-center gap-8 mb-12 fade-in">
-                <a href="mailto:noeljyoung@gmail.com" class="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg hover:shadow-lg hover:shadow-orange-500/50 transition-all duration-300 transform hover:scale-105">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-                    </svg>
-                    Email
-                </a>
-                
-                <a href="https://github.com/noeljyoung" target="_blank" rel="noopener" class="flex items-center gap-3 px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-all duration-300 transform hover:scale-105">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                    GitHub
-                </a>
-                
-                <a href="https://www.linkedin.com/in/noeljyoung/" target="_blank" rel="noopener" class="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-fuchsia-500 to-fuchsia-600 text-white rounded-lg hover:shadow-lg hover:shadow-fuchsia-500/50 transition-all duration-300 transform hover:scale-105">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"></path>
-                    </svg>
-                    LinkedIn
-                </a>
+            <!-- Project Card 2  - Richards-->
+            <div class="project-card rounded-lg p-6 scale-in" style="transition-delay: 0.1s;">
+                <div class="w-full">
+                    <h3 class="text-2xl font-bold mb-1 text-white">Richards Saji</h3>
+                    <div class="text-orange-500 font-mono text-sm mb-0">QA Lead</div>
+                    <div class="text-fuchsia-400 font-mono text-sm mb-2">Actindo AG</div>
+                </div>
+                <p class="text-gray-400 mb-4 leading-relaxed">
+                    I had the opportunity to work with Noel, a dependable and collaborative Senior Backend Engineer,
+                    during our work on the Nintendo project at Actindo, including the major Payment Gateway
+                    migration initiative...
+                </p>
+
+                <button onclick="openDialog('richards-saji-dialog')"
+                        class="text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right float-right">
+                    View full →
+                </button>
             </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="py-8 px-6 border-t border-gray-800">
-        <div class="max-w-6xl mx-auto text-center text-gray-500 font-mono">
-            <p>&lt; Built with passion by <span class="text-orange-500">Noel Young</span> /&gt;</p>
-            <p class="mt-2 text-sm">© 2024 All rights reserved</p>
-        </div>
-    </footer>
+            <!-- Project Card 3 - Mike -->
+            <div class="project-card rounded-lg p-6 scale-in" style="transition-delay: 0.1s;">
+                <div class="w-full">
+                    <h3 class="text-2xl font-bold mb-1 text-white">Mike Rockétt</h3>
+                    <div class="text-orange-500 font-mono text-sm mb-0">Lead Software Developer</div>
+                    <div class="text-fuchsia-400 font-mono text-sm mb-2">Megafreight Services</div>
+                </div>
+                <p class="text-gray-400 mb-4 leading-relaxed">
+                    Noel is an excellent backend engineer, and any team would be lucky to have him...
+                </p>
+                <button onclick="openDialog('mike-rockett-dialog')"
+                        class="text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
+                    View full →
+                </button>
+            </div>
 
+            <!-- Project Card 4 - Stefan Muller -->
+            <div class="project-card rounded-lg p-6 scale-in" style="transition-delay: 0.1s;">
+                <div class="w-full">
+                    <h3 class="text-2xl font-bold mb-1 text-white">Stefan Müller</h3>
+                    <div class="text-orange-500 font-mono text-sm mb-0">Senior Account Director</div>
+                    <div class="text-fuchsia-400 font-mono text-sm mb-2">Thinkproject</div>
+                </div>
+                <p class="text-gray-400 mb-4 leading-relaxed">
+                    I’ve had the privilege of knowing Noel for many years, and in that time he has consistently
+                    impressed me with his extraordinary intelligence, discipline, and integrity. Noel is one of the
+                    most meticulous and calculated individuals I’ve ever met...
+                </p>
+                <button onclick="openDialog('stefan-muller-dialog')"
+                        class="text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
+                    View full →
+                </button>
+            </div>
+
+            <!-- Project Card 5 - Lourens -->
+            <div class="project-card rounded-lg p-6 scale-in" style="transition-delay: 0.1s;">
+                <div class="w-full">
+                    <h3 class="text-2xl font-bold mb-1 text-white">Lourens Nortje</h3>
+                    <div class="text-orange-500 font-mono text-sm mb-0">Managing Director</div>
+                    <div class="text-fuchsia-400 font-mono text-sm mb-2">Starbright Solutions</div>
+                </div>
+
+                <p class="text-gray-400 mb-4 leading-relaxed">
+                    On top of that, Noel kept pushing himself by studying while holding down his full-time role.
+                    If I had the chance to hire him again? Absolutely, without a doubt...
+                </p>
+                <button onclick="openDialog('lourens-nortje-dialog')"
+                        class="text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
+                    View full →
+                </button>
+            </div>
+
+            <!-- Project Card 6 - Alain -->
+            <div class="project-card rounded-lg p-6 scale-in" style="transition-delay: 0.1s;">
+                <div class="w-full">
+                    <h3 class="text-2xl font-bold mb-1 text-white">Alain Jacquet</h3>
+                    <div class="text-orange-500 font-mono text-sm mb-0">Managing Director</div>
+                    <div class="text-fuchsia-400 font-mono text-sm mb-2">SABEeX</div>
+                </div>
+                <p class="text-gray-400 mb-4 leading-relaxed">
+                    He's a legend!
+                </p>
+                <button onclick="openDialog('alain-jacquet-dialog')"
+                        class="text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
+                    View full →
+                </button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 px-6 bg-black bg-opacity-50">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-8 fade-in">Get In Touch</h2>
+        <p class="text-gray-400 text-lg mb-12 fade-in">
+            I'm always open to discussing new projects, opportunities, or technical collaborations.
+        </p>
+
+        <div class="flex justify-center gap-8 mb-12 fade-in">
+            <a href="mailto:noeljyoung@gmail.com"
+               class="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg hover:shadow-lg hover:shadow-orange-500/50 transition-all duration-300 transform hover:scale-105">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                </svg>
+                Email
+            </a>
+
+            <a href="https://github.com/noeljyoung" target="_blank" rel="noopener"
+               class="flex items-center gap-3 px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-all duration-300 transform hover:scale-105">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                GitHub
+            </a>
+
+            <a href="https://www.linkedin.com/in/noeljyoung/" target="_blank" rel="noopener"
+               class="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-fuchsia-500 to-fuchsia-600 text-white rounded-lg hover:shadow-lg hover:shadow-fuchsia-500/50 transition-all duration-300 transform hover:scale-105">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"></path>
+                </svg>
+                LinkedIn
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-8 px-6 border-t border-gray-800">
+    <div class="max-w-6xl mx-auto text-center text-gray-500 font-mono">
+        <p>&lt; Built with passion by <span class="text-orange-500">Noel Young</span> /&gt;</p>
+        <p class="mt-2 text-sm">© 2024 All rights reserved</p>
+    </div>
+</footer>
+
+<!-- Dialogs Section -->
+<section>
     <!-- Stefan Walke Dialog -->
     <div id="stefan-walke-dialog"
          class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden slide-in-left">
@@ -972,7 +971,10 @@
                 <div class="text-fuchsia-400 font-mono text-sm mb-2">SABEeX</div>
             </div>
             <p class="text-gray-400 mb-4 leading-relaxed">
-                When I began development of the SABEeX Delivery Management System, I engaged Noel Young as an energetic and skilled developer. During his time with SABEeX, he built the original platform that is today one of the world's leading Online Procurement Platforms. His insight into the architecture design and robust construction helped to establish a legacy.
+                When I began development of the SABEeX Delivery Management System, I engaged Noel Young as an energetic
+                and skilled developer. During his time with SABEeX, he built the original platform that is today one of
+                the world's leading Online Procurement Platforms. His insight into the architecture design and robust
+                construction helped to establish a legacy.
                 He went on to build services other world-renowned platforms.
             </p>
             <p class="text-gray-400 mb-4 leading-relaxed">
@@ -986,110 +988,197 @@
         </div>
     </div>
 
-    <script>
-        // Scroll animation observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+    <div id="asterisk-VoIP-dialog"
+         class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden">
+        <div class="flex flex-col gap-2 bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
+            <h3 class="text-2xl font-bold mb-2 text-white">Hosted VoIP Switchboard</h3>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
+            <p class="text-gray-300 leading-relaxed">
+                Designed and built a fully operational hosted VoIP switchboard solution using the <a
+                    href="https://www.asterisk.org/" target="_blank"
+                    class="text-orange-500 hover:underline">Asterisk</a> platform, this
+                allowed users to set configuration settings from a web frontend which was built using PHP and AngularJS.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Features included call routing, voicemail, IVR menus, call recording, and user management.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                The system was deployed on Linux servers and integrated with SIP trunk providers for external calling.
+            </p>
 
-        // Observe all animated elements
-        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in, .stack-layer').forEach(el => {
-            observer.observe(el);
-        });
+            <h3>Tech Used</h3>
+            <ul class="list-disc list-inside text-gray-300">
+                <li class="text-gray-300">Asterisk PBX</li>
+                <li class="text-gray-300">PHP Backend</li>
+                <li class="text-gray-300">AngularJS Frontend</li>
+                <li class="text-gray-300">MySQL Database</li>
+                <li class="text-gray-300">Linux Server Deployment</li>
+            </ul>
 
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+            <button onclick="closeDialog('asterisk-VoIP-dialog')"
+                    class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono">
+                Close ✕
+            </button>
+        </div>
+    </div>
+    <div id="nintendo-payment-gateway-dialog"
+         class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden">
+        <div class="flex flex-col gap-4 bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
+            <h3 class="text-2xl font-bold mb-2 text-white">Nintendo Payment Gateway</h3>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const el = document.getElementById("role-badge");
+            <p class="text-gray-300 mb-4 leading-relaxed">
 
-            const base = "> Software";
-            const firstEnding = " Engineer";
-            const secondEnding = " Problem Solver";
+            </p>
 
-            let currentEnding = firstEnding;
-            let index = 0;
-            let deleting = false;
+            <button onclick="closeDialog('nintendo-payment-gateway-dialog')"
+                    class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono">
+                Close ✕
+            </button>
+        </div>
+    </div>
+    <div id="nift-dialog"
+         class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden">
+        <div class="flex flex-col gap-4 bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
+            <h3 class="text-2xl font-bold mb-2 text-white">Nift - New Car Quotes</h3>
+            <p class="text-gray-300 leading-relaxed">
+                Founded and developed a New car aggregation website with a friend of mine. The site helped a new car
+                buyer get the best quotes on a new car by allowing the user to find the car they wanted to buy from car
+                dealerships on our network within a user specified area.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                We had grown our dealership network to over 150 and were starting to get some small amounts of traction
+                but really needed
+                funding to take it further.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                ABSA, one of the big 4 banks in South Africa, were really interested and through a series of investor
+                meetings we worked our way up to the CIO pitching to the
+                Barclays Africa seeker fund. Unfortunately, the bank had a change in direction and did not award us the
+                funding.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Careers and personal life proved too much for the idea and it was shut down.
+            </p>
+            <h3 class="text-2xl font-bold">Tech Used</h3>
+            <ul class="list-disc list-inside text-gray-300">
+                <li>PHP 5.6 with a custom built MVC framework</li>
+                <li>MySQL Database</li>
+                <li>JQuery on the Frontend</li>
+                <li>Shared Hosting with a bit of a hack for Cron runs</li>
+                <li>Google Maps API integration</li>
+            </ul>
+            <button onclick="closeDialog('nift-dialog')"
+                    class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono">
+                Close ✕
+            </button>
+        </div>
+    </div>
+</section>
 
-            function randomDelay(base = 70, variance = 50) {
-                return base + Math.random() * variance;
+<script>
+    // Scroll animation observer
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
             }
-
-            function tick() {
-                const fullText = base + currentEnding;
-
-                if (!deleting) {
-                    // Typing forward
-                    el.textContent = fullText.slice(0, index + 1);
-                    index++;
-
-                    if (index === fullText.length) {
-                        setTimeout(() => {
-                            deleting = true;
-                            tick();
-                        }, 900);
-                        return;
-                    }
-
-                    setTimeout(tick, randomDelay());
-                } else {
-                    // Backspacing only the ending, leave base intact
-                    const minimum = base.length;
-
-                    el.textContent = fullText.slice(0, Math.max(index - 1, minimum));
-                    index--;
-
-                    if (index === minimum) {
-                        // Switch ending
-                        deleting = false;
-                        currentEnding =
-                            currentEnding === firstEnding
-                                ? secondEnding
-                                : firstEnding;
-
-                        setTimeout(tick, 500);
-                        return;
-                    }
-
-                    setTimeout(tick, randomDelay(50, 30));
-                }
-            }
-
-            el.textContent = "";
-            tick();
         });
+    }, observerOptions);
 
-        // dialog
-        function openDialog(id) {
-            document.getElementById(id).classList.remove("hidden");
+    // Observe all animated elements
+    document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in, .stack-layer').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const el = document.getElementById("role-badge");
+
+        const base = "> Software";
+        const firstEnding = " Engineer";
+        const secondEnding = " Problem Solver";
+
+        let currentEnding = firstEnding;
+        let index = 0;
+        let deleting = false;
+
+        function randomDelay(base = 70, variance = 50) {
+            return base + Math.random() * variance;
         }
 
-        function closeDialog(id) {
-            document.getElementById(id).classList.add("hidden");
+        function tick() {
+            const fullText = base + currentEnding;
+
+            if (!deleting) {
+                // Typing forward
+                el.textContent = fullText.slice(0, index + 1);
+                index++;
+
+                if (index === fullText.length) {
+                    setTimeout(() => {
+                        deleting = true;
+                        tick();
+                    }, 900);
+                    return;
+                }
+
+                setTimeout(tick, randomDelay());
+            } else {
+                // Backspacing only the ending, leave base intact
+                const minimum = base.length;
+
+                el.textContent = fullText.slice(0, Math.max(index - 1, minimum));
+                index--;
+
+                if (index === minimum) {
+                    // Switch ending
+                    deleting = false;
+                    currentEnding =
+                        currentEnding === firstEnding
+                            ? secondEnding
+                            : firstEnding;
+
+                    setTimeout(tick, 500);
+                    return;
+                }
+
+                setTimeout(tick, randomDelay(50, 30));
+            }
         }
-    </script>
+
+        el.textContent = "";
+        tick();
+    });
+
+    // dialog
+    function openDialog(id) {
+        document.getElementById(id).classList.remove("hidden");
+    }
+
+    function closeDialog(id) {
+        document.getElementById(id).classList.add("hidden");
+    }
+</script>
 
 
 </body>
