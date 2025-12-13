@@ -27,7 +27,7 @@
             font-family: "Noto Sans Mono", monospace !important;
         }
 
-        p {
+        p, p > span, ul, li, p > a {
             font-family: "Noto Serif", serif;
             font-optical-sizing: auto;
         }
@@ -397,9 +397,9 @@
 </nav>
 
 <!-- Hero Section -->
-<section class="min-h-screen flex items-center justify-center px-6 pt-20">
+<section class="min-h-screen flex items-center justify-center px-6 pt-10 md:pt-20">
     <div class="max-w-5xl mx-auto">
-        <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="flex flex-col md:flex-row items-center gap-2 md:gap-12">
             <div>
                 <!-- Profile Image with Coin Flip -->
                 <div class="fade-in flex-shrink-0">
@@ -413,7 +413,7 @@
                 </div>
 
                 <div class="w-full mt-4">
-                    <div class="text-3xl md:text-4xl text-gray-200 text-center mb-4 mt-6 font-heading">Noel Young</div>
+                    <div class="text-4xl md:text-5xl text-gray-200 text-center mb-4 mt-6 font-heading font-extralight">Noel Young</div>
                     <div class="grid grid-cols-2 gap-0 w-72 m-auto text-center font-sans hidden md:block">
                         <span class="px-4 py-1 text-xs text-fuchsia-500">Problem Solving</span>
                         <span class="px-4 py-1 text-xs text-orange-500">Communication</span>
@@ -426,7 +426,7 @@
             </div>
 
             <!-- Hero Content -->
-            <div class="pt-6 fade-in text-center md:text-left">
+            <div class="fade-in text-center md:text-left">
                 <div class="text-gray-600 mb-4 font-mono">Welcome to my portfolio!</div>
                 <h1 class="text-5xl md:text-7xl font-bold mb-6">
                         <span class="text-white font-heading">
@@ -472,29 +472,26 @@
 <!-- About Section -->
 <section id="about" class="py-20 px-6">
     <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-bold mb-12 text-center fade-in">
-            <span class="text-orange-500 font-mono"></span> About Me
-        </h2>
-
+        <h2 class="text-4xl font-heading mb-12 text-center fade-in">About Me</h2>
         <div class="gradient-border p-8 fade-in">
             <p class="text-gray-300 leading-relaxed text-lg">
-                Dynamic, self-taught Full-Stack Software Developer with <span class="text-orange-500 font-semibold">14 years of experience</span>
+                <span class="text-2xl font-bold">R</span>esults-oriented, self-taught <span class="text-fuchsia-500 font-semibold">Full-Stack Software Developer</span> with <span class="text-orange-500 font-semibold">14 years of experience</span>
                 delivering robust, scalable systems across industries including e-commerce, telecommunications,
                 logistics, and digital services.
             </p>
             <p class="text-gray-300 leading-relaxed text-lg mt-6">
-                Skilled in PHP, Laravel, modern JavaScript frameworks, relational
+                <span class="text-2xl font-bold">S</span>killed in PHP, Laravel, modern JavaScript frameworks, relational
                 databases, and distributed architectures, with a track record of improving system performance,
                 reliability, and developer workflows.
             </p>
             <p class="text-gray-300 leading-relaxed text-lg mt-6">
-                Known for leading projects end-to-end, collaborating effectively with stakeholders, and mentoring
+                <span class="text-2xl font-bold">K</span>nown for taking ownership, <span class="text-fuchsia-500 font-semibold">leading projects end-to-end</span>, collaborating effectively with stakeholders, and mentoring
                 teams to achieve high-quality engineering outcomes.
             </p>
             <p class="text-gray-300 leading-relaxed text-lg mt-6">
-                Driven by continuous learning, optimisation, and
-                clean software design, and ready to contribute deep technical expertise and practical
-                problem-solving to a forward-thinking organization.
+                <span class="text-2xl font-bold">D</span>riven by continuous learning, optimisation, and
+                clean software design, and <span class="text-orange-500 font-semibold">ready to contribute deep technical expertise and practical
+                problem-solving</span> to a forward-thinking organization.
             </p>
         </div>
     </div>
@@ -503,70 +500,69 @@
 <!-- Projects Section -->
 <section id="projects" class="py-20 px-6">
     <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold mb-12 text-center fade-in">Notable Projects</h2>
+        <h2 class="text-4xl font-heading mb-12 text-center fade-in">Notable Projects</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
             <!-- Project 1 - Nintendo -->
             <div class="project-card rounded-lg p-6 scale-in overflow-hidden relative">
-                <h3 class="text-xl font-bold text-white mb-1">Nintendo Payment Gateway</h3>
-                <div class="text-orange-500 font-mono text-sm">Actindo AG</div>
+                <h3 class="text-xl font-heading text-white">Nintendo Payment Gateway</h3>
+                <div class="text-orange-500 font-mono text-sm mt-1">Actindo AG</div>
 
-                <p class="text-gray-400 mt-2 text-sm line-clamp-3">
-                    Nintendo was one of our larger customers, and they had made the decision to move from the Adyen
+                <p class="text-gray-400 mt-2 line-clamp-3">
+                    <span class="text-2xl font-semibold">N</span>intendo was one of our larger customers, and they had made the decision to move from the Adyen
                     payment gateway to their own in-house solution. This required integrating a complex payment process
                     into an already established business workflow. It was a challenging piece of work with many
                     dependencies.
                 </p>
 
                 <button onclick="openDialog('nintendo-payment-gateway-dialog')"
-                        class="absolute bottom-4 right-4 text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
+                        class="pt-4 text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
                     View full →
                 </button>
             </div>
 
             <!-- Project - Megafreight Service -->
-            <div class="project-card rounded-lg p-6 scale-in overflow-hidden relative">
-                <h3 class="text-xl font-bold text-white mb-1">Netsuite Integrations</h3>
-                <div class="text-orange-500 font-mono text-sm">Megafreight Services</div>
+            <div class="project-card rounded-lg p-6 scale-in relative">
+                <h3 class="text-xl font-heading text-white">Netsuite Integrations</h3>
+                <div class="text-orange-500 font-mono text-sm mt-1">Megafreight Services</div>
 
-                <p class="text-gray-400 mt-2 text-sm line-clamp-3">
-
+                <p class="text-gray-400 mt-2 line-clamp-3">
+                    <span class="text-2xl font-semibold">D</span>esigned and implemented multiple NetSuite API integrations using the SOAP protocol in PHP to support core finance operations within a freight-forwarding environment. The integrations enabled secure...
                 </p>
 
                 <button onclick="openDialog('mf-dialog')"
-                        class="absolute bottom-4 right-4 text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
+                        class="pt-4 text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
                     View full →
                 </button>
             </div>
 
             <!-- Project 2 - Asterisk Voip -->
-            <div class="project-card rounded-lg p-6 scale-in h-48 overflow-hidden relative">
-                <h3 class="text-xl font-bold text-white mb-1">Hosted VoIP Switchboard</h3>
-                <div class="text-orange-500 font-mono text-sm">Switch Telecom</div>
+            <div class="project-card rounded-lg p-6 scale-in relative">
+                <h3 class="text-xl font-heading text-white">Hosted VoIP Switchboard</h3>
+                <div class="text-orange-500 font-mono text-sm mt-1">Switch Telecom</div>
 
-                <p class="text-gray-400 mt-2 text-sm line-clamp-3">
-                    Designed and developed a fully operational VoIP switchboard solution using the Asterisk platform,
+                <p class="text-gray-400 mt-2 line-clamp-3">
+                    <span class="text-2xl font-semibold">D</span>esigned and developed a fully operational VoIP switchboard solution using the Asterisk platform,
                     integrating a custom front-end...
                 </p>
 
                 <button onclick="openDialog('asterisk-VoIP-dialog')"
-                        class="absolute bottom-4 right-4 text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
+                        class="pt-4 text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
                     View full →
                 </button>
             </div>
 
             <!-- Project 3 - Nift -->
-            <div class="project-card rounded-lg p-6 scale-in h-48 overflow-hidden relative">
-                <h3 class="text-xl font-bold text-white mb-1">New Car Aggregator</h3>
-                <div class="text-orange-500 font-mono text-sm">Nift</div>
+            <div class="project-card rounded-lg p-6 scale-in relative">
+                <h3 class="text-xl font-heading text-white">New Car Aggregator</h3>
+                <div class="text-orange-500 font-mono text-sm mt-1">Nift</div>
 
-                <p class="text-gray-400 mt-2 text-sm line-clamp-3">
-                    Founded and developed a New car aggregation website with a friend of mine. The site helped a new car
+                <p class="text-gray-400 mt-2 line-clamp-3">
+                    <span class="text-2xl font-semibold">F</span>ounded and developed a New car aggregation website with a friend of mine. The site helped a new car
                     buyer...
                 </p>
 
                 <button onclick="openDialog('nift-dialog')"
-                        class="absolute bottom-4 right-4 text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
+                        class="pt-4 text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
                     View full →
                 </button>
             </div>
@@ -577,7 +573,7 @@
 <!-- Skills Section -->
 <section id="skills" class="py-20 px-6 bg-black bg-opacity-50">
     <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold mb-12 text-center fade-in">Skills</h2>
+        <h2 class="text-4xl font-heading mb-12 text-center fade-in">Skills</h2>
         <div class="grid md:grid-cols-2 gap-8">
             <!-- Backend -->
             <div class="slide-in-left">
@@ -697,18 +693,18 @@
 <!-- Recommendations Section -->
 <section id="recommendations" class="py-20 px-6">
     <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold mb-12 text-center fade-in">Recommendations</h2>
+        <h2 class="text-4xl font-heading mb-12 text-center fade-in">Recommendations</h2>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Project Card 1 - Stefan Walke -->
-            <div class="project-card rounded-lg p-6 scale-in">
+            <div class="project-card rounded-lg p-6 scale-in" style="transition-delay: 0.1s;">
                 <div class="w-full">
-                    <h3 class="text-2xl font-bold mb-1 text-white">Stefan Walke</h3>
-                    <div class="text-orange-500 font-mono text-sm mb-0">Engineering Manager @ Actindo AG</div>
+                    <h3 class="text-xl font-heading mb-1 text-white">Stefan Walke</h3>
+                    <div class="text-orange-500 font-mono text-sm mb-0">Engineering Manager</div>
                     <div class="text-fuchsia-400 font-mono text-sm mb-2">Actindo AG</div>
                 </div>
                 <p class="text-gray-400 mb-4 leading-relaxed">
-                    I had the opportunity to work with Noel for over two years, during which he consistently proved
+                    <span class="text-2xl font-semibold">I</span> had the opportunity to work with Noel for over two years, during which he consistently proved
                     himself to be a highly reliable and capable software engineer. Beyond his strong technical
                     foundation, what stood out most was his sense of ownership...
 
@@ -722,12 +718,12 @@
             <!-- Project Card 2  - Richards-->
             <div class="project-card rounded-lg p-6 scale-in" style="transition-delay: 0.1s;">
                 <div class="w-full">
-                    <h3 class="text-2xl font-bold mb-1 text-white">Richards Saji</h3>
+                    <h3 class="text-xl font-heading mb-1 text-white">Richards Saji</h3>
                     <div class="text-orange-500 font-mono text-sm mb-0">QA Lead</div>
                     <div class="text-fuchsia-400 font-mono text-sm mb-2">Actindo AG</div>
                 </div>
                 <p class="text-gray-400 mb-4 leading-relaxed">
-                    I had the opportunity to work with Noel, a dependable and collaborative Senior Backend Engineer,
+                    <span class="text-2xl font-semibold">I</span> had the opportunity to work with Noel, a dependable and collaborative Senior Backend Engineer,
                     during our work on the Nintendo project at Actindo, including the major Payment Gateway
                     migration initiative...
                 </p>
@@ -741,12 +737,12 @@
             <!-- Project Card 3 - Mike -->
             <div class="project-card rounded-lg p-6 scale-in" style="transition-delay: 0.1s;">
                 <div class="w-full">
-                    <h3 class="text-2xl font-bold mb-1 text-white">Mike Rockétt</h3>
+                    <h3 class="text-xl font-heading mb-1 text-white">Mike Rockétt</h3>
                     <div class="text-orange-500 font-mono text-sm mb-0">Lead Software Developer</div>
                     <div class="text-fuchsia-400 font-mono text-sm mb-2">Megafreight Services</div>
                 </div>
                 <p class="text-gray-400 mb-4 leading-relaxed">
-                    Noel is an excellent backend engineer, and any team would be lucky to have him...
+                    <span class="text-2xl font-semibold">N</span>oel is an excellent backend engineer, and any team would be lucky to have him...
                 </p>
                 <button onclick="openDialog('mike-rockett-dialog')"
                         class="text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
@@ -757,12 +753,12 @@
             <!-- Project Card 4 - Stefan Muller -->
             <div class="project-card rounded-lg p-6 scale-in" style="transition-delay: 0.1s;">
                 <div class="w-full">
-                    <h3 class="text-2xl font-bold mb-1 text-white">Stefan Müller</h3>
+                    <h3 class="text-xl font-heading mb-1 text-white">Stefan Müller</h3>
                     <div class="text-orange-500 font-mono text-sm mb-0">Senior Account Director</div>
                     <div class="text-fuchsia-400 font-mono text-sm mb-2">Thinkproject</div>
                 </div>
                 <p class="text-gray-400 mb-4 leading-relaxed">
-                    I’ve had the privilege of knowing Noel for many years, and in that time he has consistently
+                    <span class="text-2xl font-semibold">I</span>'ve had the privilege of knowing Noel for many years, and in that time he has consistently
                     impressed me with his extraordinary intelligence, discipline, and integrity. Noel is one of the
                     most meticulous and calculated individuals I’ve ever met...
                 </p>
@@ -775,14 +771,14 @@
             <!-- Project Card 5 - Lourens -->
             <div class="project-card rounded-lg p-6 scale-in" style="transition-delay: 0.1s;">
                 <div class="w-full">
-                    <h3 class="text-2xl font-bold mb-1 text-white">Lourens Nortje</h3>
+                    <h3 class="text-xl font-heading mb-1 text-white">Lourens Nortje</h3>
                     <div class="text-orange-500 font-mono text-sm mb-0">Managing Director</div>
                     <div class="text-fuchsia-400 font-mono text-sm mb-2">Starbright Solutions</div>
                 </div>
 
                 <p class="text-gray-400 mb-4 leading-relaxed">
-                    On top of that, Noel kept pushing himself by studying while holding down his full-time role.
-                    If I had the chance to hire him again? Absolutely, without a doubt...
+                    <span class="text-2xl font-semibold">I</span> had the pleasure of working with Noel as a PHP developer at our company from 2011 to 2014. He
+                    started with no PHP knowledge, but he put in the work to learn it thoroughly...
                 </p>
                 <button onclick="openDialog('lourens-nortje-dialog')"
                         class="text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
@@ -793,12 +789,13 @@
             <!-- Project Card 6 - Alain -->
             <div class="project-card rounded-lg p-6 scale-in" style="transition-delay: 0.1s;">
                 <div class="w-full">
-                    <h3 class="text-2xl font-bold mb-1 text-white">Alain Jacquet</h3>
+                    <h3 class="text-xl font-heading mb-1 text-white">Alain Jacquet</h3>
                     <div class="text-orange-500 font-mono text-sm mb-0">Managing Director</div>
                     <div class="text-fuchsia-400 font-mono text-sm mb-2">SABEeX</div>
                 </div>
                 <p class="text-gray-400 mb-4 leading-relaxed">
-                    He's a legend!
+                    <span class="text-2xl font-semibold">W</span>hen I began development of the SABEeX Delivery Management System, I engaged Noel Young as an energetic
+                    and skilled developer. During his time with SABEeX, he built the original platform...
                 </p>
                 <button onclick="openDialog('alain-jacquet-dialog')"
                         class="text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
@@ -813,7 +810,7 @@
 <!-- Contact Section -->
 <section id="contact" class="py-20 px-6 bg-black bg-opacity-50">
     <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl font-bold mb-8 fade-in">Get In Touch</h2>
+        <h2 class="text-4xl font-heading mb-8 fade-in">Get In Touch</h2>
         <p class="text-gray-400 text-lg mb-12 fade-in">
             I'm always open to discussing new projects, opportunities, or technical collaborations.
         </p>
@@ -851,42 +848,43 @@
 <footer class="py-8 px-6 border-t border-gray-800">
     <div class="max-w-6xl mx-auto text-center text-gray-500 font-mono">
         <p>&lt; Built with passion by <span class="text-orange-500">Noel Young</span> /&gt;</p>
-        <p class="mt-2 text-sm">© 2024 All rights reserved</p>
+        <p class="mt-2 text-sm">© 2025 All rights reserved</p>
     </div>
 </footer>
 
 <!-- Dialogs Section -->
 <section>
     <!-- Stefan Walke Dialog -->
-    <div id="stefan-walke-dialog"
-         class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden slide-in-left">
+    <div id="stefan-walke-dialog" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden slide-in-left">
         <div class="bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
-            <h3 class="text-2xl font-bold mb-1 text-white">Stefan Walke</h3>
+            <h3 class="text-xl font-heading text-white">Stefan Walke</h3>
             <div class="text-orange-500 font-mono text-sm mb-0">Engineering Manager</div>
             <div class="text-fuchsia-400 font-mono text-sm mb-2">Actindo AG</div>
+            <div class="flex flex-col gap-4">
+                <p class="text-gray-400 leading-relaxed">
+                    <span class="text-2xl font-semibold">I</span> had the opportunity to work with Noel for over two years, during which he consistently proved
+                    himself to be a highly reliable and capable software engineer. Beyond his strong technical
+                    foundation, what stood out most was his sense of ownership. He took end-to-end responsibility
+                    for his work, communicated clearly with both internal teams and external stakeholders, and
+                    always pushed tasks through to completion.
+                </p>
 
-            <p class="text-gray-400 mb-4 leading-relaxed">
-                I had the opportunity to work with Noel for over two years, during which he consistently proved
-                himself to be a highly reliable and capable software engineer. Beyond his strong technical
-                foundation, what stood out most was his sense of ownership. He took end-to-end responsibility
-                for his work, communicated clearly with both internal teams and external stakeholders, and
-                always pushed tasks through to completion.
-            </p>
-
-            <p class="text-gray-400 mb-4 leading-relaxed">
-                One of his most impactful contributions was integrating a complex payment process into an
-                already established business workflow. It was a challenging piece of work with many
-                dependencies, and he handled it with professionalism and care.
-            </p>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-                I would confidently recommend Noel for any senior software engineer role. He brings solid
-                technical skills, strong communication, and a dependable work ethic to any team.
-            </p>
-
-            <button onclick="closeDialog('stefan-walke-dialog')"
-                    class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono float-right">
-                Close ✕
-            </button>
+                <p class="text-gray-400 leading-relaxed">
+                    <span class="text-2xl font-semibold">O</span>ne of his most impactful contributions was integrating a complex payment process into an
+                    already established business workflow. It was a challenging piece of work with many
+                    dependencies, and he handled it with professionalism and care.
+                </p>
+                <p class="text-gray-400 leading-relaxed">
+                    <span class="text-2xl font-semibold">I</span> would confidently recommend Noel for any senior software engineer role. He brings solid
+                    technical skills, strong communication, and a dependable work ethic to any team.
+                </p>
+                    <div>
+                        <button onclick="closeDialog('stefan-walke-dialog')"
+                                class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono rounded-lg border border-orange-500 hover:border-fuchsia-500 py-2 px-4 float-right">
+                            Close ✕
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -895,44 +893,47 @@
          class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden slide-in-right">
         <div class="bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
             <div class="w-full">
-                <h3 class="text-2xl font-bold mb-1 text-white">Richards Saji</h3>
+                <h3 class="text-xl font-heading text-white">Richards Saji</h3>
                 <div class="text-orange-500 font-mono text-sm mb-0">QA Lead</div>
                 <div class="text-fuchsia-400 font-mono text-sm mb-2">Actindo AG</div>
             </div>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-                I had the opportunity to work with Noel, a dependable and collaborative Senior Backend Engineer,
-                during our work on the Nintendo project at Actindo, including the major Payment Gateway
-                migration initiative.
-            </p>
+            <div class="flex flex-col gap-4">
+                <p class="text-gray-400 leading-relaxed">
+                    <span class="text-2xl font-semibold">I</span> had the opportunity to work with Noel, a dependable and collaborative Senior Backend Engineer,
+                    during our work on the Nintendo project at Actindo, including the major Payment Gateway
+                    migration initiative.
+                </p>
 
-            <p class="text-gray-400 mb-4 leading-relaxed">
-                Noel is the kind of engineer every QA wishes to work with. His documentation is clear,
-                thoughtful, and genuinely helpful, making it effortless to understand the flow, impacts, and
-                expectations of each feature. He consistently provided meaningful implementation notes and
-                straightforward testing guidance that saved time, eliminated confusion, and made the entire QA
-                process faster and more reliable.
-            </p>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-                One thing that genuinely stood out: his tickets were always a pleasure to test. They were
-                well-prepared, stable, and often passed on the first run. That level of quality doesn’t happen
-                by accident—it reflects his strong discipline, careful thinking, and commitment to doing things
-                right.
-            </p>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-                Beyond the technical side, Noel is proactive, calm under pressure, and always ready to support
-                the team. From day one, he brought steady contribution, ownership, and maturity to the project.
-                His communication is direct and effective, and working with him feels smooth, productive, and
-                truly collaborative.
-            </p>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-                Noel is not just a strong backend engineer—he’s a team player who elevates everyone around him.
-                Any team would be lucky to have him, and I highly recommend him without hesitation.
-            </p>
-
-            <button onclick="closeDialog('richards-saji-dialog')"
-                    class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono float-right">
-                Close ✕
-            </button>
+                <p class="text-gray-400 leading-relaxed">
+                    <span class="text-2xl font-semibold">N</span>oel is the kind of engineer every QA wishes to work with. His documentation is clear,
+                    thoughtful, and genuinely helpful, making it effortless to understand the flow, impacts, and
+                    expectations of each feature. He consistently provided meaningful implementation notes and
+                    straightforward testing guidance that saved time, eliminated confusion, and made the entire QA
+                    process faster and more reliable.
+                </p>
+                <p class="text-gray-400 leading-relaxed">
+                    <span class="text-2xl font-semibold">O</span>ne thing that genuinely stood out: his tickets were always a pleasure to test. They were
+                    well-prepared, stable, and often passed on the first run. That level of quality doesn’t happen
+                    by accident—it reflects his strong discipline, careful thinking, and commitment to doing things
+                    right.
+                </p>
+                <p class="text-gray-400 leading-relaxed">
+                    <span class="text-2xl font-semibold">B</span>eyond the technical side, Noel is proactive, calm under pressure, and always ready to support
+                    the team. From day one, he brought steady contribution, ownership, and maturity to the project.
+                    His communication is direct and effective, and working with him feels smooth, productive, and
+                    truly collaborative.
+                </p>
+                <p class="text-gray-400 leading-relaxed">
+                    <span class="text-2xl font-semibold">N</span>oel is not just a strong backend engineer—he’s a team player who elevates everyone around him.
+                    Any team would be lucky to have him, and I highly recommend him without hesitation.
+                </p>
+                <div>
+                    <button onclick="closeDialog('richards-saji-dialog')"
+                            class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono rounded-lg border border-orange-500 hover:border-fuchsia-500 py-2 px-4 float-right">
+                        Close ✕
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -941,28 +942,34 @@
          class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden slide-in-right">
         <div class="bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
             <div class="w-full">
-                <h3 class="text-2xl font-bold mb-1 text-white">Mike Rockétt</h3>
+                <h3 class="text-xl font-heading text-white">Mike Rockétt</h3>
                 <div class="text-orange-500 font-mono text-sm mb-0">Lead Software Developer</div>
                 <div class="text-fuchsia-400 font-mono text-sm mb-2">Megafreight Services</div>
             </div>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-                Noel and I worked together for nearly two years, building features to replace a legacy exports
-                forwarding system that was being shut down. While I focused on operational functions, Noel
-                concentrated on the financial side, from invoicing, to financial-system integrations, to
-                approvals and reporting. We worked closely to ensure everything came together seamlessly, and I
-                was impressed by the meticulous thought he put into both understanding problems and crafting
-                their solutions. His work was excellent, and he developed valuable expertise and knowledge in
-                freight forwarding – an industry that anyone seasoned enough will tell you is far from
-                straightforward – as well as financial business functions more broadly.
-            </p>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-                Noel is an excellent backend engineer, and any team would be lucky to have him.
-            </p>
-
-            <button onclick="closeDialog('mike-rockett-dialog')"
-                    class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono float-right">
-                Close ✕
-            </button>
+            <div class="flex flex-col gap-4">
+                <p class="text-gray-400 leading-relaxed">
+                    <span class="text-2xl font-semibold">N</span>oel and I worked together for nearly two years, building features to replace a legacy exports
+                    forwarding system that was being shut down. While I focused on operational functions, Noel
+                    concentrated on the financial side, from invoicing, to financial-system integrations, to
+                    approvals and reporting. We worked closely to ensure everything came together seamlessly, and I
+                    was impressed by the meticulous thought he put into both understanding problems and crafting
+                    their solutions.
+                </p>
+                <p class="text-gray-400 leading-relaxed">
+                    <span class="text-2xl font-semibold">H</span>is work was excellent, and he developed valuable expertise and knowledge in
+                    freight forwarding – an industry that anyone seasoned enough will tell you is far from
+                    straightforward – as well as financial business functions more broadly.
+                </p>
+                <p class="text-gray-400 leading-relaxed">
+                    <span class="text-2xl font-semibold">N</span>oel is an excellent backend engineer, and any team would be lucky to have him.
+                </p>
+            </div>
+            <div>
+                <button onclick="closeDialog('mike-rockett-dialog')"
+                        class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono rounded-lg border border-orange-500 hover:border-fuchsia-500 py-2 px-4 float-right">
+                    Close ✕
+                </button>
+            </div>
         </div>
     </div>
 
@@ -971,34 +978,37 @@
          class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden slide-in-left">
         <div class="bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
             <div class="w-full">
-                <h3 class="text-2xl font-bold mb-1 text-white">Stefan Müller</h3>
+                <h3 class="text-xl font-heading text-white">Stefan Müller</h3>
                 <div class="text-orange-500 font-mono text-sm mb-0">Senior Account Director</div>
                 <div class="text-fuchsia-400 font-mono text-sm mb-2">Thinkproject</div>
             </div>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-                I’ve had the privilege of knowing Noel for many years, and in that time he has consistently
-                impressed me with his extraordinary intelligence, discipline, and integrity. Noel is one of the
-                most meticulous and calculated individuals I’ve ever met. He approaches every challenge with a
-                level of thoughtfulness and precision that is rare, and it’s no surprise that he is a member of
-                Mensa. His analytical ability and problem-solving skills are truly exceptional.
-            </p>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-                Beyond his intellectual strengths, Noel possesses an extraordinary capacity for self-discipline.
-                Having completed numerous ultramarathons, he has repeatedly demonstrated a level of commitment,
-                resilience, and mental toughness that few people ever develop. Whether he is pursuing personal
-                goals or taking on professional responsibilities, Noel approaches everything with the same
-                relentless determination to achieve excellence.
-            </p>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-                Any organisation would be fortunate to have someone of Noel’s calibre. He brings intelligence,
-                focus, reliability, and a deep sense of purpose to everything he does. I consider myself
-                fortunate to call him a long-time friend, and I wholeheartedly recommend him.
-            </p>
-
-            <button onclick="closeDialog('stefan-muller-dialog')"
-                    class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono float-right">
-                Close ✕
-            </button>
+            <div class="flex flex-col gap-4">
+                <p class="text-gray-400 leading-relaxed">
+                    <span class="text-2xl font-semibold">I</span>’ve had the privilege of knowing Noel for many years, and in that time he has consistently
+                    impressed me with his extraordinary intelligence, discipline, and integrity. Noel is one of the
+                    most meticulous and calculated individuals I’ve ever met. He approaches every challenge with a
+                    level of thoughtfulness and precision that is rare, and it’s no surprise that he is a member of
+                    Mensa. His analytical ability and problem-solving skills are truly exceptional.
+                </p>
+                <p class="text-gray-400 leading-relaxed">
+                    <span class="text-2xl font-semibold">B</span>eyond his intellectual strengths, Noel possesses an extraordinary capacity for self-discipline.
+                    Having completed numerous ultramarathons, he has repeatedly demonstrated a level of commitment,
+                    resilience, and mental toughness that few people ever develop. Whether he is pursuing personal
+                    goals or taking on professional responsibilities, Noel approaches everything with the same
+                    relentless determination to achieve excellence.
+                </p>
+                <p class="text-gray-400 leading-relaxed">
+                    <span class="text-2xl font-semibold">A</span>ny organisation would be fortunate to have someone of Noel’s calibre. He brings intelligence,
+                    focus, reliability, and a deep sense of purpose to everything he does. I consider myself
+                    fortunate to call him a long-time friend, and I wholeheartedly recommend him.
+                </p>
+                <div>
+                    <button onclick="closeDialog('stefan-muller-dialog')"
+                            class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono rounded-lg border border-orange-500 hover:border-fuchsia-500 py-2 px-4 float-right">
+                        Close ✕
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1007,30 +1017,33 @@
          class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden slide-in-left">
         <div class="bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
             <div class="w-full">
-                <h3 class="text-2xl font-bold mb-1 text-white">Lourens Nortje</h3>
+                <h3 class="text-xl font-heading text-white">Lourens Nortje</h3>
                 <div class="text-orange-500 font-mono text-sm mb-0">Managing Director</div>
                 <div class="text-fuchsia-400 font-mono text-sm mb-2">Starbright Solutions</div>
             </div>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-                I had the pleasure of working with Noel as a PHP developer at our company from 2011 to 2014. He
-                started with no PHP knowledge, but he put in the work to learn it thoroughly. In just a short
-                time, he turned into a reliable PHP developer, handling all the skills you'd expect from someone
-                with years on the job.
-            </p>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-                Noel always stepped up, taking charge and owning every task we gave him. He played a key part in
-                building our development process, creating benchmarks for developers and designing assessments
-                for new hires. He showed real leadership and drive throughout.
-            </p>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-                On top of that, Noel kept pushing himself by studying while holding down his full-time role.
-                If I had the chance to hire him again? Absolutely, without a doubt.
-            </p>
-
-            <button onclick="closeDialog('lourens-nortje-dialog')"
-                    class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono float-right">
-                Close ✕
-            </button>
+            <div class="flex flex-col gap-4">
+                <p class="text-gray-400 leading-relaxed">
+                    <span class="text-2xl font-semibold">I</span> had the pleasure of working with Noel as a PHP developer at our company from 2011 to 2014. He
+                    started with no PHP knowledge, but he put in the work to learn it thoroughly. In just a short
+                    time, he turned into a reliable PHP developer, handling all the skills you'd expect from someone
+                    with years on the job.
+                </p>
+                <p class="text-gray-400 leading-relaxed">
+                    <span class="text-2xl font-semibold">N</span>oel always stepped up, taking charge and owning every task we gave him. He played a key part in
+                    building our development process, creating benchmarks for developers and designing assessments
+                    for new hires. He showed real leadership and drive throughout.
+                </p>
+                <p class="text-gray-400 leading-relaxed">
+                    <span class="text-2xl font-semibold">O</span>n top of that, Noel kept pushing himself by studying while holding down his full-time role.
+                    If I had the chance to hire him again? Absolutely, without a doubt.
+                </p>
+                <div>
+                    <button onclick="closeDialog('lourens-nortje-dialog')"
+                            class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono rounded-lg border border-orange-500 hover:border-fuchsia-500 py-2 px-4 float-right">
+                        Close ✕
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1039,128 +1052,186 @@
          class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden slide-in-right">
         <div class="bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
             <div class="w-full">
-                <h3 class="text-2xl font-bold mb-1 text-white">Alain Jacquet</h3>
+                <h3 class="text-xl font-heading text-white">Alain Jacquet</h3>
                 <div class="text-orange-500 font-mono text-sm mb-0">Managing Director</div>
                 <div class="text-fuchsia-400 font-mono text-sm mb-2">SABEeX</div>
             </div>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-                When I began development of the SABEeX Delivery Management System, I engaged Noel Young as an energetic
-                and skilled developer. During his time with SABEeX, he built the original platform that is today one of
-                the world's leading Online Procurement Platforms. His insight into the architecture design and robust
-                construction helped to establish a legacy.
-                He went on to build services other world-renowned platforms.
-            </p>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-                He's a legend!
-            </p>
-
-            <button onclick="closeDialog('alain-jacquet-dialog')"
-                    class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono float-right">
-                Close ✕
-            </button>
+            <div class="flex flex-col gap-4">
+                <p class="text-gray-400 leading-relaxed">
+                    <span class="text-2xl font-semibold">W</span>hen I began development of the SABEeX Delivery Management System, I engaged Noel Young as an energetic
+                    and skilled developer. During his time with SABEeX, he built the original platform that is today one of
+                    the world's leading Online Procurement Platforms.
+                </p>
+                <p class="text-gray-400 leading-relaxed">
+                    <span class="text-2xl font-semibold">H</span>is insight into the architecture design and robust
+                    construction helped to establish a legacy. He went on to build services other world-renowned platforms
+                </p>
+                <p class="text-gray-400 leading-relaxed">
+                    <span class="text-2xl font-semibold">H</span>e's a legend!
+                </p>
+                <div>
+                    <button onclick="closeDialog('alain-jacquet-dialog')"
+                            class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono rounded-lg border border-orange-500 hover:border-fuchsia-500 py-2 px-4 float-right">
+                        Close ✕
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div id="asterisk-VoIP-dialog"
-         class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden">
-        <div class="flex flex-col gap-2 bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
-            <h3 class="text-2xl font-bold mb-2 text-white">Hosted VoIP Switchboard</h3>
-
-            <p class="text-gray-300 leading-relaxed">
-                Designed and built a fully operational hosted VoIP switchboard solution using the <a
-                    href="https://www.asterisk.org/" target="_blank"
-                    class="text-orange-500 hover:underline">Asterisk</a> platform, this
-                allowed users to set configuration settings from a web frontend which was built using PHP and AngularJS.
-            </p>
-            <p class="text-gray-300 leading-relaxed">
-                Features included call routing, voicemail, IVR menus, call recording, and user management.
-            </p>
-            <p class="text-gray-300 leading-relaxed">
-                The system was deployed on Linux servers and integrated with SIP trunk providers for external calling.
-            </p>
-
-            <h3>Tech Used</h3>
-            <ul class="list-disc list-inside text-gray-300">
-                <li class="text-gray-300">Asterisk PBX</li>
-                <li class="text-gray-300">PHP Backend</li>
-                <li class="text-gray-300">AngularJS Frontend</li>
-                <li class="text-gray-300">MySQL Database</li>
-                <li class="text-gray-300">Linux Server Deployment</li>
-            </ul>
-
-            <button onclick="closeDialog('asterisk-VoIP-dialog')"
-                    class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono">
-                Close ✕
-            </button>
-        </div>
-    </div>
+    <!-- NPGW dialog -->
     <div id="nintendo-payment-gateway-dialog"
          class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden">
-        <div class="flex flex-col gap-4 bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
-            <h3 class="text-2xl font-bold mb-2 text-white">Nintendo Payment Gateway</h3>
-
-            <p class="text-gray-300 mb-4 leading-relaxed">
-
-            </p>
-
-            <button onclick="closeDialog('nintendo-payment-gateway-dialog')"
-                    class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono">
-                Close ✕
-            </button>
+        <div class="bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
+            <h3 class="text-2xl font-heading text-white">Nintendo Payment Gateway</h3>
+            <div class="text-orange-500 font-mono text-sm">Actindo AG, Germany</div>
+            <div class="flex flex-col gap-4 mt-4">
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="text-2xl font-semibold">N</span>intendo was one of our larger customers, and they had made the decision to move from the Adyen
+                    payment gateway to their own in-house solution. This required integrating a complex payment process
+                    into an already established business workflow. It was a challenging piece of work with many
+                    dependencies.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="text-2xl font-semibold">T</span>his involved developing new API integration using REST and OAUTH, setting up test cases, and then implementing
+                    into a workflow to automate the processes.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="text-2xl font-semibold">C</span>lient communication was key, as they were developing their API in parallel.
+                </p>
+                <h3 class="text-xl font-heading">Tech Used</h3>
+                <ul class="list-disc list-inside text-gray-300">
+                    <li class="text-gray-300">PHP Backend (with HHVM)</li>
+                    <li class="text-gray-300">REST Api Integrations</li>
+                    <li class="text-gray-300">Polymer Frontend</li>
+                    <li class="text-gray-300">MySQL Database</li>
+                    <li class="text-gray-300">Linux Server Deployment</li>
+                </ul>
+                <div>
+                    <button onclick="closeDialog('nintendo-payment-gateway-dialog')"
+                            class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono rounded-lg border border-orange-500 hover:border-fuchsia-500 py-2 px-4 float-right">
+                        Close ✕
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- mf-dialog -->
     <div id="mf-dialog"
          class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden">
-        <div class="flex flex-col gap-4 bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
-            <h3 class="text-2xl font-bold mb-2 text-white">Netsuite Integrations</h3>
-
-            <p class="text-gray-300 mb-4 leading-relaxed">
-
-            </p>
-
-            <button onclick="closeDialog('mf-dialog')"
-                    class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono">
-                Close ✕
-            </button>
+        <div class="bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
+            <h3 class="text-2xl font-heading text-white">Netsuite Integrations</h3>
+            <div class="text-orange-500 font-mono text-sm">Megafreight Services, South Africa</div>
+            <div class="flex flex-col gap-4 mt-4">
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="text-2xl font-semibold">D</span>esigned and implemented multiple NetSuite API integrations using the SOAP protocol in PHP to support core finance operations within a freight-forwarding environment. The integrations enabled secure, reliable bi-directional data exchange between internal systems and NetSuite, including customer financials, invoices, disbursements, and ledger-related data.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="text-2xl font-semibold">D</span>eveloped a disbursement control module to enforce financial governance across freight operations, ensuring that supplier payments, client charges, and operational costs were validated against predefined rules and approval thresholds before execution. This significantly reduced manual reconciliation, improved auditability, and minimized financial risk.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="text-2xl font-semibold">I</span>n parallel, built a management-level finance dashboard that aggregated NetSuite data into a high-level overview of client financial health. This included real-time visibility into balances, outstanding invoices, cash flow exposure, and client profitability, enabling senior stakeholders to make informed strategic and operational decisions without requiring direct access to NetSuite.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="text-2xl font-semibold">T</span>he solution emphasized data integrity, fault-tolerant SOAP communication, and clear separation between integration logic and business rules, resulting in a scalable and maintainable financial integration layer.
+                </p>
+                <h3 class="text-xl font-heading">Tech Used</h3>
+                <ul class="list-disc list-inside text-gray-300">
+                    <li class="text-gray-300">PHP & Laravel</li>
+                    <li class="text-gray-300">SOAP Api Integrations</li>
+                    <li class="text-gray-300">VueJS Frontend</li>
+                    <li class="text-gray-300">PostgreSQL Database</li>
+                    <li class="text-gray-300">AWS Server Deployments</li>
+                </ul>
+                <div>
+                    <button onclick="closeDialog('mf-dialog')"
+                            class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono rounded-lg border border-orange-500 hover:border-fuchsia-500 py-2 px-4 float-right">
+                        Close ✕
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Asterk voip dialog -->
+    <div id="asterisk-VoIP-dialog"
+         class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden">
+        <div class="bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
+            <h3 class="text-2xl font-heading text-white">Hosted VoIP Switchboard</h3>
+            <div class="text-orange-500 font-mono text-sm">Switch Telecom, South Africa</div>
+            <div class="flex flex-col gap-4 mt-4">
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="text-2xl font-semibold">D</span>esigned and built a fully operational hosted VoIP switchboard solution using the <a
+                        href="https://www.asterisk.org/" target="_blank"
+                        class="text-orange-500 hover:underline">Asterisk</a> platform, this
+                    allowed users to set configuration settings from a web frontend which was built using PHP and AngularJS.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="text-2xl font-semibold">F</span>eatures included call routing, voicemail, IVR menus, call recording, and user management.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="text-2xl font-semibold">T</span>he system was deployed on Linux servers and integrated with SIP trunk providers for external calling.
+                </p>
+                <h3 class="text-xl font-heading">Tech Used</h3>
+                <ul class="list-disc list-inside text-gray-300">
+                    <li class="text-gray-300">Asterisk PBX</li>
+                    <li class="text-gray-300">PHP Backend</li>
+                    <li class="text-gray-300">AngularJS Frontend</li>
+                    <li class="text-gray-300">MySQL Database</li>
+                    <li class="text-gray-300">Linux Server Deployment</li>
+                </ul>
+                <div>
+                    <button onclick="closeDialog('asterisk-VoIP-dialog')"
+                            class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono rounded-lg border border-orange-500 hover:border-fuchsia-500 py-2 px-4 float-right">
+                        Close ✕
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nift Dialog -->
     <div id="nift-dialog"
          class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden">
-        <div class="flex flex-col gap-4 bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
-            <h3 class="text-2xl font-bold mb-2 text-white">Nift - New Car Quotes</h3>
-            <p class="text-gray-300 leading-relaxed">
-                Founded and developed a New car aggregation website with a friend of mine. The site helped a new car
-                buyer get the best quotes on a new car by allowing the user to find the car they wanted to buy from car
-                dealerships on our network within a user specified area.
-            </p>
-            <p class="text-gray-300 leading-relaxed">
-                We had grown our dealership network to over 150 and were starting to get some small amounts of traction
-                but really needed
-                funding to take it further.
-            </p>
-            <p class="text-gray-300 leading-relaxed">
-                ABSA, one of the big 4 banks in South Africa, were really interested and through a series of investor
-                meetings we worked our way up to the CIO pitching to the
-                Barclays Africa seeker fund. Unfortunately, the bank had a change in direction and did not award us the
-                funding.
-            </p>
-            <p class="text-gray-300 leading-relaxed">
-                Careers and personal life proved too much for the idea and it was shut down.
-            </p>
-            <h3 class="text-2xl font-bold">Tech Used</h3>
-            <ul class="list-disc list-inside text-gray-300">
-                <li>PHP 5.6 with a custom built MVC framework</li>
-                <li>MySQL Database</li>
-                <li>JQuery on the Frontend</li>
-                <li>Shared Hosting with a bit of a hack for Cron runs</li>
-                <li>Google Maps API integration</li>
-            </ul>
-            <button onclick="closeDialog('nift-dialog')"
-                    class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono">
-                Close ✕
-            </button>
+        <div class="bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
+            <h3 class="text-2xl font-bold text-white">Nift - New Car Quotes</h3>
+            <div class="text-orange-500 font-mono text-sm">Nift.co.za, South Africa</div>
+            <div class="flex flex-col gap-4 mt-4">
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="text-2xl font-semibold">F</span>ounded and developed a New car aggregation website with a friend of mine. The site helped a new car
+                    buyer get the best quotes on a new car by allowing the user to find the car they wanted to buy from car
+                    dealerships on our network within a user specified area.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="text-2xl font-semibold">W</span>e had grown our dealership network to over 150 and were starting to get some small amounts of traction
+                    but really needed
+                    funding to take it further.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="text-2xl font-semibold">A</span>BSA, one of the big 4 banks in South Africa, were really interested and through a series of investor
+                    meetings we worked our way up to the CIO pitching to the
+                    Barclays Africa seeker fund. Unfortunately, the bank had a change in direction and did not award us the
+                    funding.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="text-2xl font-semibold">C</span>areers and personal life proved too much for the idea and it was shut down.
+                </p>
+                <h3 class="text-xl font-heading">Tech Used</h3>
+                <ul class="list-disc list-inside text-gray-300">
+                    <li>PHP 5.6 with a custom built MVC framework</li>
+                    <li>MySQL Database</li>
+                    <li>JQuery on the Frontend</li>
+                    <li>Shared Hosting with a bit of a hack for Cron runs</li>
+                    <li>Google Maps API integration</li>
+                </ul>
+                <div>
+                    <button onclick="closeDialog('nift-dialog')"
+                            class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono rounded-lg border border-orange-500 hover:border-fuchsia-500 py-2 px-4 float-right">
+                        Close ✕
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -1198,9 +1269,7 @@
             }
         });
     });
-</script>
 
-<script>
     document.addEventListener("DOMContentLoaded", () => {
         const el = document.getElementById("role-badge");
 
