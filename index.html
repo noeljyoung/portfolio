@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png" type="image/png">
+
     <title>Noel Young - Software Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Mono:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 
         @font-face {
             font-family: 'Departure Mono';
@@ -17,17 +19,28 @@
             font-display: swap;
         }
 
-        .font-mono {
+        .font-departure-mono {
             font-family: 'Departure Mono' !important;
         }
 
-        .font-merriweather {
-            font-family: "Merriweather", serif;
+        .font-mono {
+            font-family: "Noto Sans Mono", monospace !important;
+        }
+
+        p {
+            font-family: "Noto Serif", serif;
             font-optical-sizing: auto;
         }
 
+        .font-heading {
+            font-family: "Noto Sans Display", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 800;
+        }
+
         * {
-            font-family: Inter, sans-serif;
+            font-family: "Noto Sans", sans-serif;
+            font-optical-sizing: auto;
         }
 
         body {
@@ -315,6 +328,48 @@
             }
         }
 
+        .coin-flip {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            transform-style: preserve-3d;
+            transition: transform 0.8s;
+            animation: flip 6s infinite;
+        }
+
+        .coin-flip:hover {
+            transform: rotateY(180deg);
+            cursor: pointer;
+        }
+
+        .coin-flip img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .coin-flip .front {
+            transform: rotateY(0deg);
+        }
+
+        .coin-flip .back {
+            transform: rotateY(180deg);
+        }
+
+        @keyframes flip {
+            0%, 45% {
+                transform: rotateY(0deg);
+            }
+            50%, 95% {
+                transform: rotateY(180deg);
+            }
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
 
     </style>
 </head>
@@ -346,58 +401,61 @@
     <div class="max-w-5xl mx-auto">
         <div class="flex flex-col md:flex-row items-center gap-12">
             <div>
-                <!-- Profile Image -->
+                <!-- Profile Image with Coin Flip -->
                 <div class="fade-in flex-shrink-0">
                     <div class="relative group">
-                        <div class="absolute -inset-1 bg-gradient-to-r from-orange-500 to-fuchsia-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
-                        <img src="profile.jpg" alt="Noel Young"
-                             class="relative w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-gray-900">
+                        <div class="absolute -inset-1 rounded-full"></div>
+                        <div class="relative coin-flip">
+                            <img src="profile.png" alt="Noel Young - Photo" class="front rounded-full object-cover border-4 border-gray-900">
+                            <img src="profile-pxl.png" alt="Noel Young - Pixel Art" class="back rounded-full object-cover border-4 border-gray-900">
+                        </div>
                     </div>
                 </div>
-                <div class="w-full">
-                    <div class="text-3xl md:text-4xl text-gray-200 text-center mt-8 mb-4 font-bold">Noel Young</div>
-                    <div class="grid grid-cols-2 gap-0 w-72 m-auto text-center">
-                        <span class="px-4 py-2 text-xs text-fuchsia-500">Problem Solver</span>
-                        <span class="px-4 py-2 text-xs text-orange-500">Good Communicator</span>
-                        <span class="px-4 py-2 text-xs text-orange-600">Takes Ownership</span>
-                        <span class="px-4 py-2 text-xs text-fuchsia-500">Shows Leadership</span>
-                        <span class="px-4 py-2 text-xs text-fuchsia-600">Disciplined</span>
-                        <span class="px-4 py-2 text-xs text-orange-600">Pragmatic</span>
+
+                <div class="w-full mt-4">
+                    <div class="text-3xl md:text-4xl text-gray-200 text-center mb-4 mt-6 font-heading">Noel Young</div>
+                    <div class="grid grid-cols-2 gap-0 w-72 m-auto text-center font-sans hidden md:block">
+                        <span class="px-4 py-1 text-xs text-fuchsia-500">Problem Solving</span>
+                        <span class="px-4 py-1 text-xs text-orange-500">Communication</span>
+                        <span class="px-4 py-1 text-xs text-orange-600">Ownership</span>
+                        <span class="px-4 py-1 text-xs text-fuchsia-500">Leadership</span>
+                        <span class="px-4 py-1 text-xs text-fuchsia-600">Discipline</span>
+                        <span class="px-4 py-1 text-xs text-orange-600">Pragmatic</span>
                     </div>
                 </div>
             </div>
 
             <!-- Hero Content -->
-            <div class="fade-in text-center md:text-left">
+            <div class="pt-6 fade-in text-center md:text-left">
                 <div class="text-gray-600 mb-4 font-mono">Welcome to my portfolio!</div>
                 <h1 class="text-5xl md:text-7xl font-bold mb-6">
-                        <span class="text-white">
-                            <span class="font-mono block text-3xl gradient-text">"Get-it-done"</span> Software Engineer</span>
+                        <span class="text-white font-heading">
+                            <span class="font-mono block text-3xl gradient-text">"Results-focused"</span> Software Engineer</span>
                 </h1>
                 <div class="flex gap-4 justify-center md:justify-start mb-12 flex-wrap">
-                        <span class="font-mono px-4 py-2 bg-orange-500 bg-opacity-10 text-orange-500 rounded-lg border border-orange-500 border-opacity-30 w-150">
-                            Full-Stack Specialist
+                        <span class="font-departure-mono px-4 py-2 bg-orange-500 bg-opacity-10 text-orange-500 rounded-lg border border-orange-500 border-opacity-30 w-150">
+                            Full-Stack Developer
                         </span>
                     <div class="px-4 py-2 pr-0 mr-4 w-72 bg-fuchsia-500 bg-opacity-10 text-fuchsia-500 rounded-lg border border-fuchsia-500 border-opacity-30">
                         <span
                                 id="role-badge"
-                                class="typewriter font-mono"
+                                class="typewriter font-departure-mono"
                         ></span>
                     </div>
 
                 </div>
-                <div class="flex gap-4 justify-center md:justify-start mb-12 flex-wrap">
+                <div class="flex gap-4 justify-center md:justify-start mb-12 flex-wrap text-center">
                     <div class="is-uppercase p-0">
-                        <p class="text-5xl md:text-7xl font-bold text-fuchsia-400">+14</p>
+                        <p class="text-5xl md:text-6xl font-heading text-fuchsia-400 glow animate-pulse">+14</p>
                         <span>Years of experience</span>
                     </div>
                 </div>
-                <div class="flex gap-4 justify-center md:justify-start mb-12 flex-wrap">
+                <div class="flex gap-4 justify-center md:justify-start bottom flex-wrap">
                     <a href="#about"
                        class="px-8 py-3 bg-gradient-to-r from-orange-500 to-fuchsia-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-orange-500/50 transition-all duration-300 transform hover:scale-105">
                         View My Work
                     </a>
-                    <a href="resume.pdf" download="Noel_Young_Resume.pdf"
+                    <a href="NoelYoungResume.pdf" download="Noel_Young_Resume.pdf" target="_blank"
                        class="flex items-center px-8 py-3 text-white box-border border border-default-medium  font-semibold rounded-full hover:shadow-lg hover:shadow-orange-500/50 transition-all duration-300 transform hover:scale-105">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -461,6 +519,21 @@
                 </p>
 
                 <button onclick="openDialog('nintendo-payment-gateway-dialog')"
+                        class="absolute bottom-4 right-4 text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
+                    View full →
+                </button>
+            </div>
+
+            <!-- Project - Megafreight Service -->
+            <div class="project-card rounded-lg p-6 scale-in overflow-hidden relative">
+                <h3 class="text-xl font-bold text-white mb-1">Netsuite Integrations</h3>
+                <div class="text-orange-500 font-mono text-sm">Megafreight Services</div>
+
+                <p class="text-gray-400 mt-2 text-sm line-clamp-3">
+
+                </p>
+
+                <button onclick="openDialog('mf-dialog')"
                         class="absolute bottom-4 right-4 text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
                     View full →
                 </button>
@@ -1031,6 +1104,23 @@
             </p>
 
             <button onclick="closeDialog('nintendo-payment-gateway-dialog')"
+                    class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono">
+                Close ✕
+            </button>
+        </div>
+    </div>
+
+    <!-- mf-dialog -->
+    <div id="mf-dialog"
+         class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden">
+        <div class="flex flex-col gap-4 bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
+            <h3 class="text-2xl font-bold mb-2 text-white">Netsuite Integrations</h3>
+
+            <p class="text-gray-300 mb-4 leading-relaxed">
+
+            </p>
+
+            <button onclick="closeDialog('mf-dialog')"
                     class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono">
                 Close ✕
             </button>
