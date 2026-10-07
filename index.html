@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.png" type="image/png">
 
-    <title>Noel Young - Software Engineer</title>
+    <title>Noel Young - Backend Software Engineer</title>
+    <meta name="description" content="Noel Young — backend software engineer in Barcelona. Go, PHP and Python; payment integrations, workflows and AI-powered products.">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Mono:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
@@ -430,11 +432,11 @@
                 <div class="text-gray-600 mb-4 font-mono">Welcome to my portfolio!</div>
                 <h1 class="text-5xl md:text-7xl font-bold mb-6">
                         <span class="text-white font-heading">
-                            <span class="font-mono block text-3xl gradient-text">"Results-focused"</span> Software Engineer</span>
+                            <span class="font-mono block text-3xl gradient-text">Backend</span> Software Engineer</span>
                 </h1>
                 <div class="flex gap-4 justify-center md:justify-start mb-12 flex-wrap">
                         <span class="font-departure-mono px-4 py-2 bg-orange-500 bg-opacity-10 text-orange-500 rounded-lg border border-orange-500 border-opacity-30 w-150">
-                            Full-Stack Developer
+                            Go · PHP · Python
                         </span>
                     <div class="px-4 py-2 pr-0 mr-4 w-72 bg-fuchsia-500 bg-opacity-10 text-fuchsia-500 rounded-lg border border-fuchsia-500 border-opacity-30">
                         <span
@@ -446,7 +448,7 @@
                 </div>
                 <div class="flex gap-4 justify-center md:justify-start mb-12 flex-wrap text-center">
                     <div class="is-uppercase p-0">
-                        <p class="text-5xl md:text-6xl font-heading text-fuchsia-400 glow animate-pulse">+14</p>
+                        <p class="text-5xl md:text-6xl font-heading text-fuchsia-400 glow animate-pulse">+15</p>
                         <span>Years of experience</span>
                     </div>
                 </div>
@@ -475,23 +477,23 @@
         <h2 class="text-4xl font-heading mb-12 text-center fade-in">About Me</h2>
         <div class="gradient-border p-8 fade-in">
             <p class="text-gray-300 leading-relaxed text-lg">
-                <span class="text-2xl font-bold">R</span>esults-oriented, self-taught <span class="text-fuchsia-500 font-semibold">Full-Stack Software Developer</span> with <span class="text-orange-500 font-semibold">14 years of experience</span>
-                delivering robust, scalable systems across industries including e-commerce, telecommunications,
-                logistics, and digital services.
+                <span class="text-2xl font-bold">I</span>'m a <span class="text-fuchsia-500 font-semibold">backend engineer</span> based in Barcelona with <span class="text-orange-500 font-semibold">15 years of experience</span>.
+                I started in agency web development and moved into backend systems for telecoms, logistics and,
+                since 2023, e-commerce payments.
             </p>
             <p class="text-gray-300 leading-relaxed text-lg mt-6">
-                <span class="text-2xl font-bold">S</span>killed in PHP, Laravel, modern JavaScript frameworks, relational
-                databases, and distributed architectures, with a track record of improving system performance,
-                reliability, and developer workflows.
+                <span class="text-2xl font-bold">A</span>t Actindo I'm a core engineer on the <span class="text-orange-500 font-semibold">Nintendo of Europe payment gateway integration</span>.
+                I designed and implemented the API integration and payment workflows, took them through go-live in
+                February 2025, and support them in production.
             </p>
             <p class="text-gray-300 leading-relaxed text-lg mt-6">
-                <span class="text-2xl font-bold">K</span>nown for taking ownership, <span class="text-fuchsia-500 font-semibold">leading projects end-to-end</span>, collaborating effectively with stakeholders, and mentoring
-                teams to achieve high-quality engineering outcomes.
+                <span class="text-2xl font-bold">O</span>utside client work I'm building two products end to end:
+                <span class="text-fuchsia-500 font-semibold">Botico</span>, an AI-driven WhatsApp booking platform in Go, and
+                <span class="text-fuchsia-500 font-semibold">Loonya</span>, a goal and habit-tracking SaaS in Python.
             </p>
             <p class="text-gray-300 leading-relaxed text-lg mt-6">
-                <span class="text-2xl font-bold">D</span>riven by continuous learning, optimisation, and
-                clean software design, and <span class="text-orange-500 font-semibold">ready to contribute deep technical expertise and practical
-                problem-solving</span> to a forward-thinking organization.
+                <span class="text-2xl font-bold">I</span>'m looking for <span class="text-orange-500 font-semibold">senior backend roles</span> where payments,
+                integrations or AI-powered workflows are part of the job.
             </p>
         </div>
     </div>
@@ -502,16 +504,47 @@
     <div class="max-w-6xl mx-auto">
         <h2 class="text-4xl font-heading mb-12 text-center fade-in">Notable Projects</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project - Botico -->
+            <div class="project-card rounded-lg p-6 scale-in overflow-hidden relative">
+                <h3 class="text-xl font-heading text-white">Botico</h3>
+                <div class="text-orange-500 font-mono text-sm mt-1">Own product · Go</div>
+
+                <p class="text-gray-400 mt-2 line-clamp-3">
+                    <span class="text-2xl font-semibold">A</span> multi-tenant WhatsApp booking platform for appointment-based businesses, with an AI
+                    gateway that routes each message to a guided flow, a human, a cached answer or a tool-using LLM agent.
+                </p>
+
+                <button onclick="openDialog('botico-dialog')"
+                        class="pt-4 text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
+                    View full →
+                </button>
+            </div>
+
+            <!-- Project - Loonya -->
+            <div class="project-card rounded-lg p-6 scale-in overflow-hidden relative">
+                <h3 class="text-xl font-heading text-white">Loonya</h3>
+                <div class="text-orange-500 font-mono text-sm mt-1">Own product · Python</div>
+
+                <p class="text-gray-400 mt-2 line-clamp-3">
+                    <span class="text-2xl font-semibold">A</span> goal and habit-tracking SaaS combining calendar, habits, goals, journal and gamification,
+                    with hybrid semantic search, Stripe subscriptions and automated backup verification.
+                </p>
+
+                <button onclick="openDialog('loonya-dialog')"
+                        class="pt-4 text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
+                    View full →
+                </button>
+            </div>
+
             <!-- Project 1 - Nintendo -->
             <div class="project-card rounded-lg p-6 scale-in overflow-hidden relative">
                 <h3 class="text-xl font-heading text-white">Nintendo Payment Gateway</h3>
                 <div class="text-orange-500 font-mono text-sm mt-1">Actindo AG</div>
 
                 <p class="text-gray-400 mt-2 line-clamp-3">
-                    <span class="text-2xl font-semibold">N</span>intendo was one of our larger customers, and they had made the decision to move from the Adyen
-                    payment gateway to their own in-house solution. This required integrating a complex payment process
-                    into an already established business workflow. It was a challenging piece of work with many
-                    dependencies.
+                    <span class="text-2xl font-semibold">N</span>intendo of Europe moved its payments onto its own in-house payment gateway (backed by Adyen).
+                    I designed and implemented the integration between Actindo's commerce platform and that gateway,
+                    covering the full payment lifecycle.
                 </p>
 
                 <button onclick="openDialog('nintendo-payment-gateway-dialog')"
@@ -654,10 +687,6 @@
                     <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-red-500 bg-opacity-10 text-red-500 rounded-lg border border-red-500 border-opacity-30 font-mono">
                           <img src="https://cdn.simpleicons.org/Git?viewbox=auto&size=20" alt="Git" class="">Git
                         </span>
-                    <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-white-500 bg-opacity-10 text-white-500 rounded-lg border border-white-500 border-opacity-30 font-mono">
-                          <img src="https://cdn.simpleicons.org/gitextensions?viewbox=auto&size=20" alt="CI/CD"
-                               class="">CI/CD
-                        </span>
                     <span class="inline-flex items-center gap-2 rounded-lg tech-badge px-4 py-1 bg-orange-500 bg-opacity-10 text-orange-500 rounded-lg border border-orange-500 border-opacity-30 font-mono">
                           <img src="https://cdn.simpleicons.org/Asterisk?viewbox=auto&size=20" alt="Asterisk" class="">Asterisk
                         </span>
@@ -678,11 +707,13 @@
             <div class="slide-in-right">
                 <h3 class="text-2xl font-semibold mb-6 text-gray-500 font-mono">Architecture & Patterns</h3>
                 <div class="flex flex-wrap gap-3">
-                    <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">Microservices</span>
-                    <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">Event-Driven</span>
                     <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">RESTful Design</span>
+                    <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">Payment Workflows</span>
+                    <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">Multi-tenancy</span>
+                    <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">Transactional Outbox</span>
+                    <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">LLM Tool Calling</span>
+                    <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">RAG</span>
                     <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">SOLID Principles</span>
-                    <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">TDD</span>
                     <span class="tech-badge px-4 py-1 bg-gray-700 bg-opacity-50 text-gray-300 rounded-lg border border-gray-600 font-mono">Data Structures</span>
                 </div>
             </div>
@@ -750,24 +781,6 @@
                 </button>
             </div>
 
-            <!-- Project Card 4 - Stefan Muller -->
-            <div class="project-card rounded-lg p-6 scale-in" style="transition-delay: 0.1s;">
-                <div class="w-full">
-                    <h3 class="text-xl font-heading mb-1 text-white">Stefan Müller</h3>
-                    <div class="text-orange-500 font-mono text-sm mb-0">Senior Account Director</div>
-                    <div class="text-fuchsia-400 font-mono text-sm mb-2">Thinkproject</div>
-                </div>
-                <p class="text-gray-400 mb-4 leading-relaxed">
-                    <span class="text-2xl font-semibold">I</span>'ve had the privilege of knowing Noel for many years, and in that time he has consistently
-                    impressed me with his extraordinary intelligence, discipline, and integrity. Noel is one of the
-                    most meticulous and calculated individuals I’ve ever met...
-                </p>
-                <button onclick="openDialog('stefan-muller-dialog')"
-                        class="text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
-                    View full →
-                </button>
-            </div>
-
             <!-- Project Card 5 - Lourens -->
             <div class="project-card rounded-lg p-6 scale-in" style="transition-delay: 0.1s;">
                 <div class="w-full">
@@ -798,6 +811,24 @@
                     and skilled developer. During his time with SABEeX, he built the original platform...
                 </p>
                 <button onclick="openDialog('alain-jacquet-dialog')"
+                        class="text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
+                    View full →
+                </button>
+            </div>
+
+            <!-- Project Card 4 - Stefan Muller -->
+            <div class="project-card rounded-lg p-6 scale-in" style="transition-delay: 0.1s;">
+                <div class="w-full">
+                    <h3 class="text-xl font-heading mb-1 text-white">Stefan Müller</h3>
+                    <div class="text-orange-500 font-mono text-sm mb-0">Senior Account Director</div>
+                    <div class="text-fuchsia-400 font-mono text-sm mb-2">Thinkproject</div>
+                </div>
+                <p class="text-gray-400 mb-4 leading-relaxed">
+                    <span class="text-2xl font-semibold">I</span>'ve had the privilege of knowing Noel for many years, and in that time he has consistently
+                    impressed me with his extraordinary intelligence, discipline, and integrity. Noel is one of the
+                    most meticulous and calculated individuals I’ve ever met...
+                </p>
+                <button onclick="openDialog('stefan-muller-dialog')"
                         class="text-orange-500 hover:text-fuchsia-400 font-mono text-sm float-right">
                     View full →
                 </button>
@@ -848,7 +879,7 @@
 <footer class="py-8 px-6 border-t border-gray-800">
     <div class="max-w-6xl mx-auto text-center text-gray-500 font-mono">
         <p>&lt; Built with passion by <span class="text-orange-500">Noel Young</span> /&gt;</p>
-        <p class="mt-2 text-sm">© 2025 All rights reserved</p>
+        <p class="mt-2 text-sm">Barcelona, Spain · © 2026 All rights reserved</p>
     </div>
 </footer>
 
@@ -1064,13 +1095,99 @@
                 </p>
                 <p class="text-gray-400 leading-relaxed">
                     <span class="text-2xl font-semibold">H</span>is insight into the architecture design and robust
-                    construction helped to establish a legacy. He went on to build services other world-renowned platforms
+                    construction helped to establish a legacy.
                 </p>
                 <p class="text-gray-400 leading-relaxed">
                     <span class="text-2xl font-semibold">H</span>e's a legend!
                 </p>
                 <div>
                     <button onclick="closeDialog('alain-jacquet-dialog')"
+                            class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono rounded-lg border border-orange-500 hover:border-fuchsia-500 py-2 px-4 float-right">
+                        Close ✕
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botico dialog -->
+    <div id="botico-dialog"
+         class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden">
+        <div class="bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
+            <h3 class="text-2xl font-heading text-white">Botico</h3>
+            <div class="text-orange-500 font-mono text-sm">Own product · Barcelona · in development since May 2026</div>
+            <div class="flex flex-col gap-4 mt-4">
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="text-2xl font-semibold">B</span>otico is a multi-tenant WhatsApp automation platform for appointment-based businesses such as
+                    salons, clinics and gyms. I designed and built it end to end as a modular Go monolith on PostgreSQL.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="text-2xl font-semibold">A</span>n AI gateway routes every incoming message to one of four lanes: a guided flow, a human hand-off,
+                    a cached answer, or a single tool-using LLM call. Pure-function pre-routing and guard checks run before
+                    anything is sent, which keeps model calls, cost and behaviour under control.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="text-2xl font-semibold">T</span>he agent works through a tool framework with JSON-schema validation of inputs and replies, versioned
+                    per-tenant prompts, and a RAG knowledge base on pgvector. The design follows the EU AI Act: AI disclosure,
+                    human hand-off, and an audit trail of every model call, tool call and routing decision, with per-message
+                    cost reporting.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="text-2xl font-semibold">I</span>ntegrations with Calendly, Fresha, Google Calendar, Stripe, SumUp and Tally use a plugin system. A React
+                    frontend gives tenants a visual workflow builder and a live conversation dashboard.
+                </p>
+                <h3 class="text-xl font-heading">Tech Used</h3>
+                <ul class="list-disc list-inside text-gray-300">
+                    <li class="text-gray-300">Go (chi), background workers</li>
+                    <li class="text-gray-300">PostgreSQL 16 with pgvector</li>
+                    <li class="text-gray-300">Anthropic API, Voyage AI embeddings</li>
+                    <li class="text-gray-300">React, TypeScript, React Flow, WebSockets</li>
+                    <li class="text-gray-300">Docker</li>
+                </ul>
+                <div>
+                    <button onclick="closeDialog('botico-dialog')"
+                            class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono rounded-lg border border-orange-500 hover:border-fuchsia-500 py-2 px-4 float-right">
+                        Close ✕
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loonya dialog -->
+    <div id="loonya-dialog"
+         class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden">
+        <div class="bg-gray-900 p-8 rounded-lg max-w-xl max-h-[80vh] overflow-y-auto">
+            <h3 class="text-2xl font-heading text-white">Loonya</h3>
+            <div class="text-orange-500 font-mono text-sm">Own product · in development since August 2026</div>
+            <div class="flex flex-col gap-4 mt-4">
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="text-2xl font-semibold">L</span>oonya is a subscription productivity app that brings calendar, habits, goals, journal and
+                    gamification together. I designed and built it end to end: a FastAPI backend on PostgreSQL with raw SQL,
+                    and a React frontend.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="text-2xl font-semibold">S</span>earch is hybrid semantic and fuzzy, using Meilisearch with Voyage AI embeddings. Writes go through a
+                    transactional outbox to an async indexer, and every read passes through one path that enforces per-user isolation.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="text-2xl font-semibold">B</span>illing runs on Stripe subscriptions with a trial, webhooks, a customer portal and vouchers. An MCP server
+                    lets AI assistants read a user's own data.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="text-2xl font-semibold">I</span> built it to be operated, not just demoed: encrypted nightly backups with an automated weekly restore test,
+                    health checks and alerting, full account deletion across every system, and around 400 backend tests.
+                </p>
+                <h3 class="text-xl font-heading">Tech Used</h3>
+                <ul class="list-disc list-inside text-gray-300">
+                    <li class="text-gray-300">Python, FastAPI</li>
+                    <li class="text-gray-300">PostgreSQL, Meilisearch, Voyage AI</li>
+                    <li class="text-gray-300">Stripe, MCP</li>
+                    <li class="text-gray-300">React, Vite, Tailwind</li>
+                    <li class="text-gray-300">Docker, Cloudflare Tunnel</li>
+                </ul>
+                <div>
+                    <button onclick="closeDialog('loonya-dialog')"
                             class="mt-4 text-orange-500 hover:text-fuchsia-400 font-mono rounded-lg border border-orange-500 hover:border-fuchsia-500 py-2 px-4 float-right">
                         Close ✕
                     </button>
@@ -1087,25 +1204,31 @@
             <div class="text-orange-500 font-mono text-sm">Actindo AG, Germany</div>
             <div class="flex flex-col gap-4 mt-4">
                 <p class="text-gray-300 leading-relaxed">
-                    <span class="text-2xl font-semibold">N</span>intendo was one of our larger customers, and they had made the decision to move from the Adyen
-                    payment gateway to their own in-house solution. This required integrating a complex payment process
-                    into an already established business workflow. It was a challenging piece of work with many
-                    dependencies.
+                    <span class="text-2xl font-semibold">N</span>intendo of Europe, one of Actindo's larger customers, moved its payments onto its own in-house
+                    payment gateway (NPGW, backed by Adyen). That meant integrating a complex payment process into an
+                    already established order workflow, with many dependencies.
                 </p>
                 <p class="text-gray-300 leading-relaxed">
-                    <span class="text-2xl font-semibold">T</span>his involved developing new API integration using REST and OAUTH, setting up test cases, and then implementing
-                    into a workflow to automate the processes.
+                    <span class="text-2xl font-semibold">I</span> designed and implemented the REST/OAuth API integration and the Petri net workflows that drive it:
+                    card, PayPal, Apple Pay and Google Pay across multiple European markets, including pre-authorisation,
+                    Merchant Initiated Transactions for pre-orders, partial captures, refunds and multi-currency chargebacks.
                 </p>
                 <p class="text-gray-300 leading-relaxed">
-                    <span class="text-2xl font-semibold">C</span>lient communication was key, as they were developing their API in parallel.
+                    <span class="text-2xl font-semibold">C</span>lient communication was key, as Nintendo was developing its API in parallel. The integration went
+                    live in February 2025 and I continue to support it in production.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="text-2xl font-semibold">I</span> also built a Go mock server for the gateway, shared by every sandbox, with header-switchable
+                    scenarios for declines, 3DS, gateway errors, timeouts and rate limits. It is now being integrated into the
+                    automated E2E test suite.
                 </p>
                 <h3 class="text-xl font-heading">Tech Used</h3>
                 <ul class="list-disc list-inside text-gray-300">
                     <li class="text-gray-300">PHP Backend (with HHVM)</li>
-                    <li class="text-gray-300">REST Api Integrations</li>
-                    <li class="text-gray-300">Polymer Frontend</li>
+                    <li class="text-gray-300">REST and OAuth API Integrations</li>
+                    <li class="text-gray-300">Petri net workflow engine</li>
+                    <li class="text-gray-300">Go (mock gateway server)</li>
                     <li class="text-gray-300">MySQL Database</li>
-                    <li class="text-gray-300">Linux Server Deployment</li>
                 </ul>
                 <div>
                     <button onclick="closeDialog('nintendo-payment-gateway-dialog')"
